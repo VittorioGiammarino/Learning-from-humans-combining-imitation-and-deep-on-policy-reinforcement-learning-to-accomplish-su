@@ -1,0 +1,21 @@
+#!/bin/bash -l
+
+#$ -l h_rt=192:00:00
+
+#$ -m e
+
+#$ -j y
+
+#$ -N HIL_ablation_study_seed_7
+
+#$ -V
+
+#$ -pe omp 8
+#$ -l mem_per_core=8G
+
+module load python3/3.8.10
+module load pytorch/1.9.0
+
+python main.py --mode "HIL_ablation_study" --seed 7
+
+

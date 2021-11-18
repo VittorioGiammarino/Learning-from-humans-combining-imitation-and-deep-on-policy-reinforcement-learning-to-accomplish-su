@@ -1,0 +1,1312 @@
+---------------------------------------
+Policy: PPO, HIL: True, nOptions: 1, Supervised: False, Env: Foraging, Seed: 5
+---------------------------------------
+---------------------------------------
+Policy: PPO, HIL: True, nOptions: 1, Supervised: False, Env: Foraging, Seed: 5
+---------------------------------------
+---------------------------------------
+ADV_Reward
+---------------------------------------
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 10.100
+---------------------------------------
+Total T: 3000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+Total T: 6000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+Total T: 9000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+Total T: 12000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+Total T: 15000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+Total T: 18000, Iter Num: 1, Episode T: 3000 Reward: 45.000
+Total T: 21000, Iter Num: 1, Episode T: 3000 Reward: 15.000
+Total T: 24000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+Total T: 27000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+Total T: 30000, Iter Num: 1, Episode T: 3000 Reward: 0.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 11.600
+---------------------------------------
+Total T: 33000, Iter Num: 2, Episode T: 3000 Reward: 9.000
+Total T: 36000, Iter Num: 2, Episode T: 3000 Reward: 0.000
+Total T: 39000, Iter Num: 2, Episode T: 3000 Reward: 48.000
+Total T: 42000, Iter Num: 2, Episode T: 3000 Reward: 58.000
+Total T: 45000, Iter Num: 2, Episode T: 3000 Reward: 51.000
+Total T: 48000, Iter Num: 2, Episode T: 3000 Reward: 34.000
+Total T: 51000, Iter Num: 2, Episode T: 3000 Reward: 0.000
+Total T: 54000, Iter Num: 2, Episode T: 3000 Reward: 19.000
+Total T: 57000, Iter Num: 2, Episode T: 3000 Reward: 15.000
+Total T: 60000, Iter Num: 2, Episode T: 3000 Reward: 29.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 58.000
+---------------------------------------
+Total T: 63000, Iter Num: 3, Episode T: 3000 Reward: 60.000
+Total T: 66000, Iter Num: 3, Episode T: 3000 Reward: 60.000
+Total T: 69000, Iter Num: 3, Episode T: 3000 Reward: 59.000
+Total T: 72000, Iter Num: 3, Episode T: 3000 Reward: 0.000
+Total T: 75000, Iter Num: 3, Episode T: 3000 Reward: 0.000
+Total T: 78000, Iter Num: 3, Episode T: 3000 Reward: 60.000
+Total T: 81000, Iter Num: 3, Episode T: 3000 Reward: 60.000
+Total T: 84000, Iter Num: 3, Episode T: 3000 Reward: 60.000
+Total T: 87000, Iter Num: 3, Episode T: 3000 Reward: 0.000
+Total T: 90000, Iter Num: 3, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 59.000
+---------------------------------------
+Total T: 93000, Iter Num: 4, Episode T: 3000 Reward: 60.000
+Total T: 96000, Iter Num: 4, Episode T: 3000 Reward: 60.000
+Total T: 99000, Iter Num: 4, Episode T: 3000 Reward: 58.000
+Total T: 102000, Iter Num: 4, Episode T: 3000 Reward: 55.000
+Total T: 105000, Iter Num: 4, Episode T: 3000 Reward: 54.000
+Total T: 108000, Iter Num: 4, Episode T: 3000 Reward: 60.000
+Total T: 111000, Iter Num: 4, Episode T: 3000 Reward: 55.000
+Total T: 114000, Iter Num: 4, Episode T: 3000 Reward: 61.000
+Total T: 117000, Iter Num: 4, Episode T: 3000 Reward: 60.000
+Total T: 120000, Iter Num: 4, Episode T: 3000 Reward: 43.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 123000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 126000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 129000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 132000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 135000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 138000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 141000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 144000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 147000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+Total T: 150000, Iter Num: 5, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 153000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+Total T: 156000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+Total T: 159000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+Total T: 162000, Iter Num: 6, Episode T: 3000 Reward: 83.000
+Total T: 165000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+Total T: 168000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+Total T: 171000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+Total T: 174000, Iter Num: 6, Episode T: 3000 Reward: 43.000
+Total T: 177000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+Total T: 180000, Iter Num: 6, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 183000, Iter Num: 7, Episode T: 3000 Reward: 59.000
+Total T: 186000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 189000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 192000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 195000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 198000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 201000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 204000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 207000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+Total T: 210000, Iter Num: 7, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 213000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 216000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 219000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 222000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 225000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 228000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 231000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 234000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+Total T: 237000, Iter Num: 8, Episode T: 3000 Reward: 84.000
+Total T: 240000, Iter Num: 8, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 243000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 246000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 249000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 252000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 255000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 258000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 261000, Iter Num: 9, Episode T: 3000 Reward: 59.000
+Total T: 264000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 267000, Iter Num: 9, Episode T: 3000 Reward: 60.000
+Total T: 270000, Iter Num: 9, Episode T: 3000 Reward: 61.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 273000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+Total T: 276000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+Total T: 279000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+Total T: 282000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+Total T: 285000, Iter Num: 10, Episode T: 3000 Reward: 45.000
+Total T: 288000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+Total T: 291000, Iter Num: 10, Episode T: 3000 Reward: 88.000
+Total T: 294000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+Total T: 297000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+Total T: 300000, Iter Num: 10, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 303000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+Total T: 306000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+Total T: 309000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+Total T: 312000, Iter Num: 11, Episode T: 3000 Reward: 84.000
+Total T: 315000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+Total T: 318000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+Total T: 321000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+Total T: 324000, Iter Num: 11, Episode T: 3000 Reward: 68.000
+Total T: 327000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+Total T: 330000, Iter Num: 11, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 333000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 336000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 339000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 342000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 345000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 348000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 351000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 354000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 357000, Iter Num: 12, Episode T: 3000 Reward: 60.000
+Total T: 360000, Iter Num: 12, Episode T: 3000 Reward: 76.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 363000, Iter Num: 13, Episode T: 3000 Reward: 60.000
+Total T: 366000, Iter Num: 13, Episode T: 3000 Reward: 0.000
+Total T: 369000, Iter Num: 13, Episode T: 3000 Reward: 60.000
+Total T: 372000, Iter Num: 13, Episode T: 3000 Reward: 60.000
+Total T: 375000, Iter Num: 13, Episode T: 3000 Reward: 0.000
+Total T: 378000, Iter Num: 13, Episode T: 3000 Reward: 60.000
+Total T: 381000, Iter Num: 13, Episode T: 3000 Reward: 60.000
+Total T: 384000, Iter Num: 13, Episode T: 3000 Reward: 0.000
+Total T: 387000, Iter Num: 13, Episode T: 3000 Reward: 0.000
+Total T: 390000, Iter Num: 13, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 393000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 396000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 399000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 402000, Iter Num: 14, Episode T: 3000 Reward: 0.000
+Total T: 405000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 408000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 411000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 414000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 417000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+Total T: 420000, Iter Num: 14, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 423000, Iter Num: 15, Episode T: 3000 Reward: 0.000
+Total T: 426000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+Total T: 429000, Iter Num: 15, Episode T: 3000 Reward: 0.000
+Total T: 432000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+Total T: 435000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+Total T: 438000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+Total T: 441000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+Total T: 444000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+Total T: 447000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+Total T: 450000, Iter Num: 15, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 453000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 456000, Iter Num: 16, Episode T: 3000 Reward: 61.000
+Total T: 459000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 462000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 465000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 468000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 471000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 474000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 477000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+Total T: 480000, Iter Num: 16, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 483000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+Total T: 486000, Iter Num: 17, Episode T: 3000 Reward: 24.000
+Total T: 489000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+Total T: 492000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+Total T: 495000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+Total T: 498000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+Total T: 501000, Iter Num: 17, Episode T: 3000 Reward: 102.000
+Total T: 504000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+Total T: 507000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+Total T: 510000, Iter Num: 17, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 513000, Iter Num: 18, Episode T: 3000 Reward: 18.000
+Total T: 516000, Iter Num: 18, Episode T: 3000 Reward: 120.000
+Total T: 519000, Iter Num: 18, Episode T: 3000 Reward: 90.000
+Total T: 522000, Iter Num: 18, Episode T: 3000 Reward: 71.000
+Total T: 525000, Iter Num: 18, Episode T: 3000 Reward: 126.000
+Total T: 528000, Iter Num: 18, Episode T: 3000 Reward: 60.000
+Total T: 531000, Iter Num: 18, Episode T: 3000 Reward: 111.000
+Total T: 534000, Iter Num: 18, Episode T: 3000 Reward: 60.000
+Total T: 537000, Iter Num: 18, Episode T: 3000 Reward: 60.000
+Total T: 540000, Iter Num: 18, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 543000, Iter Num: 19, Episode T: 3000 Reward: 45.000
+Total T: 546000, Iter Num: 19, Episode T: 3000 Reward: 60.000
+Total T: 549000, Iter Num: 19, Episode T: 3000 Reward: 59.000
+Total T: 552000, Iter Num: 19, Episode T: 3000 Reward: 28.000
+Total T: 555000, Iter Num: 19, Episode T: 3000 Reward: 120.000
+Total T: 558000, Iter Num: 19, Episode T: 3000 Reward: 139.000
+Total T: 561000, Iter Num: 19, Episode T: 3000 Reward: 48.000
+Total T: 564000, Iter Num: 19, Episode T: 3000 Reward: 60.000
+Total T: 567000, Iter Num: 19, Episode T: 3000 Reward: 60.000
+Total T: 570000, Iter Num: 19, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 573000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+Total T: 576000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+Total T: 579000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+Total T: 582000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+Total T: 585000, Iter Num: 20, Episode T: 3000 Reward: 0.000
+Total T: 588000, Iter Num: 20, Episode T: 3000 Reward: 120.000
+Total T: 591000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+Total T: 594000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+Total T: 597000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+Total T: 600000, Iter Num: 20, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 603000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+Total T: 606000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+Total T: 609000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+Total T: 612000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+Total T: 615000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+Total T: 618000, Iter Num: 21, Episode T: 3000 Reward: 177.000
+Total T: 621000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+Total T: 624000, Iter Num: 21, Episode T: 3000 Reward: 117.000
+Total T: 627000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+Total T: 630000, Iter Num: 21, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 633000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 636000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 639000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 642000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 645000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 648000, Iter Num: 22, Episode T: 3000 Reward: 120.000
+Total T: 651000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 654000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 657000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+Total T: 660000, Iter Num: 22, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 663000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 666000, Iter Num: 23, Episode T: 3000 Reward: 95.000
+Total T: 669000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 672000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 675000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 678000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 681000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 684000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 687000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+Total T: 690000, Iter Num: 23, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 693000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 696000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 699000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 702000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 705000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 708000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 711000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 714000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 717000, Iter Num: 24, Episode T: 3000 Reward: 60.000
+Total T: 720000, Iter Num: 24, Episode T: 3000 Reward: 78.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 723000, Iter Num: 25, Episode T: 3000 Reward: 60.000
+Total T: 726000, Iter Num: 25, Episode T: 3000 Reward: 60.000
+Total T: 729000, Iter Num: 25, Episode T: 3000 Reward: 120.000
+Total T: 732000, Iter Num: 25, Episode T: 3000 Reward: 47.000
+Total T: 735000, Iter Num: 25, Episode T: 3000 Reward: 52.000
+Total T: 738000, Iter Num: 25, Episode T: 3000 Reward: 49.000
+Total T: 741000, Iter Num: 25, Episode T: 3000 Reward: 60.000
+Total T: 744000, Iter Num: 25, Episode T: 3000 Reward: 59.000
+Total T: 747000, Iter Num: 25, Episode T: 3000 Reward: 74.000
+Total T: 750000, Iter Num: 25, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 753000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+Total T: 756000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+Total T: 759000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+Total T: 762000, Iter Num: 26, Episode T: 3000 Reward: 29.000
+Total T: 765000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+Total T: 768000, Iter Num: 26, Episode T: 3000 Reward: 30.000
+Total T: 771000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+Total T: 774000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+Total T: 777000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+Total T: 780000, Iter Num: 26, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 783000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 786000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 789000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 792000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 795000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 798000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 801000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 804000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 807000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+Total T: 810000, Iter Num: 27, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 813000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+Total T: 816000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+Total T: 819000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+Total T: 822000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+Total T: 825000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+Total T: 828000, Iter Num: 28, Episode T: 3000 Reward: 24.000
+Total T: 831000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+Total T: 834000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+Total T: 837000, Iter Num: 28, Episode T: 3000 Reward: 94.000
+Total T: 840000, Iter Num: 28, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 843000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+Total T: 846000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+Total T: 849000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+Total T: 852000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+Total T: 855000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+Total T: 858000, Iter Num: 29, Episode T: 3000 Reward: 53.000
+Total T: 861000, Iter Num: 29, Episode T: 3000 Reward: 51.000
+Total T: 864000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+Total T: 867000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+Total T: 870000, Iter Num: 29, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 873000, Iter Num: 30, Episode T: 3000 Reward: 60.000
+Total T: 876000, Iter Num: 30, Episode T: 3000 Reward: 60.000
+Total T: 879000, Iter Num: 30, Episode T: 3000 Reward: 60.000
+Total T: 882000, Iter Num: 30, Episode T: 3000 Reward: 60.000
+Total T: 885000, Iter Num: 30, Episode T: 3000 Reward: 60.000
+Total T: 888000, Iter Num: 30, Episode T: 3000 Reward: 56.000
+Total T: 891000, Iter Num: 30, Episode T: 3000 Reward: 60.000
+Total T: 894000, Iter Num: 30, Episode T: 3000 Reward: 60.000
+Total T: 897000, Iter Num: 30, Episode T: 3000 Reward: 61.000
+Total T: 900000, Iter Num: 30, Episode T: 3000 Reward: 59.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 903000, Iter Num: 31, Episode T: 3000 Reward: 60.000
+Total T: 906000, Iter Num: 31, Episode T: 3000 Reward: 13.000
+Total T: 909000, Iter Num: 31, Episode T: 3000 Reward: 110.000
+Total T: 912000, Iter Num: 31, Episode T: 3000 Reward: 60.000
+Total T: 915000, Iter Num: 31, Episode T: 3000 Reward: 60.000
+Total T: 918000, Iter Num: 31, Episode T: 3000 Reward: 90.000
+Total T: 921000, Iter Num: 31, Episode T: 3000 Reward: 60.000
+Total T: 924000, Iter Num: 31, Episode T: 3000 Reward: 60.000
+Total T: 927000, Iter Num: 31, Episode T: 3000 Reward: 83.000
+Total T: 930000, Iter Num: 31, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 0.000
+---------------------------------------
+Total T: 933000, Iter Num: 32, Episode T: 3000 Reward: 60.000
+Total T: 936000, Iter Num: 32, Episode T: 3000 Reward: 56.000
+Total T: 939000, Iter Num: 32, Episode T: 3000 Reward: 60.000
+Total T: 942000, Iter Num: 32, Episode T: 3000 Reward: 87.000
+Total T: 945000, Iter Num: 32, Episode T: 3000 Reward: 0.000
+Total T: 948000, Iter Num: 32, Episode T: 3000 Reward: 10.000
+Total T: 951000, Iter Num: 32, Episode T: 3000 Reward: 60.000
+Total T: 954000, Iter Num: 32, Episode T: 3000 Reward: 10.000
+Total T: 957000, Iter Num: 32, Episode T: 3000 Reward: 0.000
+Total T: 960000, Iter Num: 32, Episode T: 3000 Reward: 88.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 0.000
+---------------------------------------
+Total T: 963000, Iter Num: 33, Episode T: 3000 Reward: 60.000
+Total T: 966000, Iter Num: 33, Episode T: 3000 Reward: 60.000
+Total T: 969000, Iter Num: 33, Episode T: 3000 Reward: 60.000
+Total T: 972000, Iter Num: 33, Episode T: 3000 Reward: 35.000
+Total T: 975000, Iter Num: 33, Episode T: 3000 Reward: 0.000
+Total T: 978000, Iter Num: 33, Episode T: 3000 Reward: 60.000
+Total T: 981000, Iter Num: 33, Episode T: 3000 Reward: 37.000
+Total T: 984000, Iter Num: 33, Episode T: 3000 Reward: 0.000
+Total T: 987000, Iter Num: 33, Episode T: 3000 Reward: 60.000
+Total T: 990000, Iter Num: 33, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 54.000
+---------------------------------------
+Total T: 993000, Iter Num: 34, Episode T: 3000 Reward: 60.000
+Total T: 996000, Iter Num: 34, Episode T: 3000 Reward: 27.000
+Total T: 999000, Iter Num: 34, Episode T: 3000 Reward: 60.000
+Total T: 1002000, Iter Num: 34, Episode T: 3000 Reward: 60.000
+Total T: 1005000, Iter Num: 34, Episode T: 3000 Reward: 44.000
+Total T: 1008000, Iter Num: 34, Episode T: 3000 Reward: 60.000
+Total T: 1011000, Iter Num: 34, Episode T: 3000 Reward: 60.000
+Total T: 1014000, Iter Num: 34, Episode T: 3000 Reward: 60.000
+Total T: 1017000, Iter Num: 34, Episode T: 3000 Reward: 60.000
+Total T: 1020000, Iter Num: 34, Episode T: 3000 Reward: 43.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1023000, Iter Num: 35, Episode T: 3000 Reward: 83.000
+Total T: 1026000, Iter Num: 35, Episode T: 3000 Reward: 60.000
+Total T: 1029000, Iter Num: 35, Episode T: 3000 Reward: 42.000
+Total T: 1032000, Iter Num: 35, Episode T: 3000 Reward: 91.000
+Total T: 1035000, Iter Num: 35, Episode T: 3000 Reward: 60.000
+Total T: 1038000, Iter Num: 35, Episode T: 3000 Reward: 42.000
+Total T: 1041000, Iter Num: 35, Episode T: 3000 Reward: 60.000
+Total T: 1044000, Iter Num: 35, Episode T: 3000 Reward: 29.000
+Total T: 1047000, Iter Num: 35, Episode T: 3000 Reward: 60.000
+Total T: 1050000, Iter Num: 35, Episode T: 3000 Reward: 35.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1053000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+Total T: 1056000, Iter Num: 36, Episode T: 3000 Reward: 43.000
+Total T: 1059000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+Total T: 1062000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+Total T: 1065000, Iter Num: 36, Episode T: 3000 Reward: 44.000
+Total T: 1068000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+Total T: 1071000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+Total T: 1074000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+Total T: 1077000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+Total T: 1080000, Iter Num: 36, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1083000, Iter Num: 37, Episode T: 3000 Reward: 60.000
+Total T: 1086000, Iter Num: 37, Episode T: 3000 Reward: 0.000
+Total T: 1089000, Iter Num: 37, Episode T: 3000 Reward: 60.000
+Total T: 1092000, Iter Num: 37, Episode T: 3000 Reward: 60.000
+Total T: 1095000, Iter Num: 37, Episode T: 3000 Reward: 0.000
+Total T: 1098000, Iter Num: 37, Episode T: 3000 Reward: 60.000
+Total T: 1101000, Iter Num: 37, Episode T: 3000 Reward: 60.000
+Total T: 1104000, Iter Num: 37, Episode T: 3000 Reward: 60.000
+Total T: 1107000, Iter Num: 37, Episode T: 3000 Reward: 39.000
+Total T: 1110000, Iter Num: 37, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1113000, Iter Num: 38, Episode T: 3000 Reward: 60.000
+Total T: 1116000, Iter Num: 38, Episode T: 3000 Reward: 60.000
+Total T: 1119000, Iter Num: 38, Episode T: 3000 Reward: 0.000
+Total T: 1122000, Iter Num: 38, Episode T: 3000 Reward: 49.000
+Total T: 1125000, Iter Num: 38, Episode T: 3000 Reward: 60.000
+Total T: 1128000, Iter Num: 38, Episode T: 3000 Reward: 41.000
+Total T: 1131000, Iter Num: 38, Episode T: 3000 Reward: 0.000
+Total T: 1134000, Iter Num: 38, Episode T: 3000 Reward: 60.000
+Total T: 1137000, Iter Num: 38, Episode T: 3000 Reward: 60.000
+Total T: 1140000, Iter Num: 38, Episode T: 3000 Reward: 0.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1143000, Iter Num: 39, Episode T: 3000 Reward: 24.000
+Total T: 1146000, Iter Num: 39, Episode T: 3000 Reward: 55.000
+Total T: 1149000, Iter Num: 39, Episode T: 3000 Reward: 60.000
+Total T: 1152000, Iter Num: 39, Episode T: 3000 Reward: 60.000
+Total T: 1155000, Iter Num: 39, Episode T: 3000 Reward: 60.000
+Total T: 1158000, Iter Num: 39, Episode T: 3000 Reward: 0.000
+Total T: 1161000, Iter Num: 39, Episode T: 3000 Reward: 60.000
+Total T: 1164000, Iter Num: 39, Episode T: 3000 Reward: 0.000
+Total T: 1167000, Iter Num: 39, Episode T: 3000 Reward: 60.000
+Total T: 1170000, Iter Num: 39, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1173000, Iter Num: 40, Episode T: 3000 Reward: 36.000
+Total T: 1176000, Iter Num: 40, Episode T: 3000 Reward: 60.000
+Total T: 1179000, Iter Num: 40, Episode T: 3000 Reward: 30.000
+Total T: 1182000, Iter Num: 40, Episode T: 3000 Reward: 0.000
+Total T: 1185000, Iter Num: 40, Episode T: 3000 Reward: 60.000
+Total T: 1188000, Iter Num: 40, Episode T: 3000 Reward: 60.000
+Total T: 1191000, Iter Num: 40, Episode T: 3000 Reward: 10.000
+Total T: 1194000, Iter Num: 40, Episode T: 3000 Reward: 0.000
+Total T: 1197000, Iter Num: 40, Episode T: 3000 Reward: 18.000
+Total T: 1200000, Iter Num: 40, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 59.800
+---------------------------------------
+Total T: 1203000, Iter Num: 41, Episode T: 3000 Reward: 60.000
+Total T: 1206000, Iter Num: 41, Episode T: 3000 Reward: 0.000
+Total T: 1209000, Iter Num: 41, Episode T: 3000 Reward: 20.000
+Total T: 1212000, Iter Num: 41, Episode T: 3000 Reward: 60.000
+Total T: 1215000, Iter Num: 41, Episode T: 3000 Reward: 60.000
+Total T: 1218000, Iter Num: 41, Episode T: 3000 Reward: 0.000
+Total T: 1221000, Iter Num: 41, Episode T: 3000 Reward: 18.000
+Total T: 1224000, Iter Num: 41, Episode T: 3000 Reward: 36.000
+Total T: 1227000, Iter Num: 41, Episode T: 3000 Reward: 0.000
+Total T: 1230000, Iter Num: 41, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 59.200
+---------------------------------------
+Total T: 1233000, Iter Num: 42, Episode T: 3000 Reward: 61.000
+Total T: 1236000, Iter Num: 42, Episode T: 3000 Reward: 32.000
+Total T: 1239000, Iter Num: 42, Episode T: 3000 Reward: 60.000
+Total T: 1242000, Iter Num: 42, Episode T: 3000 Reward: 60.000
+Total T: 1245000, Iter Num: 42, Episode T: 3000 Reward: 60.000
+Total T: 1248000, Iter Num: 42, Episode T: 3000 Reward: 60.000
+Total T: 1251000, Iter Num: 42, Episode T: 3000 Reward: 57.000
+Total T: 1254000, Iter Num: 42, Episode T: 3000 Reward: 0.000
+Total T: 1257000, Iter Num: 42, Episode T: 3000 Reward: 60.000
+Total T: 1260000, Iter Num: 42, Episode T: 3000 Reward: 21.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 59.500
+---------------------------------------
+Total T: 1263000, Iter Num: 43, Episode T: 3000 Reward: 60.000
+Total T: 1266000, Iter Num: 43, Episode T: 3000 Reward: 15.000
+Total T: 1269000, Iter Num: 43, Episode T: 3000 Reward: 60.000
+Total T: 1272000, Iter Num: 43, Episode T: 3000 Reward: 60.000
+Total T: 1275000, Iter Num: 43, Episode T: 3000 Reward: 60.000
+Total T: 1278000, Iter Num: 43, Episode T: 3000 Reward: 60.000
+Total T: 1281000, Iter Num: 43, Episode T: 3000 Reward: 9.000
+Total T: 1284000, Iter Num: 43, Episode T: 3000 Reward: 59.000
+Total T: 1287000, Iter Num: 43, Episode T: 3000 Reward: 0.000
+Total T: 1290000, Iter Num: 43, Episode T: 3000 Reward: 33.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 59.900
+---------------------------------------
+Total T: 1293000, Iter Num: 44, Episode T: 3000 Reward: 3.000
+Total T: 1296000, Iter Num: 44, Episode T: 3000 Reward: 60.000
+Total T: 1299000, Iter Num: 44, Episode T: 3000 Reward: 60.000
+Total T: 1302000, Iter Num: 44, Episode T: 3000 Reward: 60.000
+Total T: 1305000, Iter Num: 44, Episode T: 3000 Reward: 60.000
+Total T: 1308000, Iter Num: 44, Episode T: 3000 Reward: 60.000
+Total T: 1311000, Iter Num: 44, Episode T: 3000 Reward: 60.000
+Total T: 1314000, Iter Num: 44, Episode T: 3000 Reward: 60.000
+Total T: 1317000, Iter Num: 44, Episode T: 3000 Reward: 21.000
+Total T: 1320000, Iter Num: 44, Episode T: 3000 Reward: 10.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1323000, Iter Num: 45, Episode T: 3000 Reward: 60.000
+Total T: 1326000, Iter Num: 45, Episode T: 3000 Reward: 77.000
+Total T: 1329000, Iter Num: 45, Episode T: 3000 Reward: 60.000
+Total T: 1332000, Iter Num: 45, Episode T: 3000 Reward: 25.000
+Total T: 1335000, Iter Num: 45, Episode T: 3000 Reward: 60.000
+Total T: 1338000, Iter Num: 45, Episode T: 3000 Reward: 9.000
+Total T: 1341000, Iter Num: 45, Episode T: 3000 Reward: 60.000
+Total T: 1344000, Iter Num: 45, Episode T: 3000 Reward: 60.000
+Total T: 1347000, Iter Num: 45, Episode T: 3000 Reward: 60.000
+Total T: 1350000, Iter Num: 45, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1353000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1356000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1359000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1362000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1365000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1368000, Iter Num: 46, Episode T: 3000 Reward: 64.000
+Total T: 1371000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1374000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1377000, Iter Num: 46, Episode T: 3000 Reward: 60.000
+Total T: 1380000, Iter Num: 46, Episode T: 3000 Reward: 28.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1383000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1386000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1389000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1392000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1395000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1398000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1401000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1404000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1407000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+Total T: 1410000, Iter Num: 47, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1413000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1416000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1419000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1422000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1425000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1428000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1431000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1434000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1437000, Iter Num: 48, Episode T: 3000 Reward: 60.000
+Total T: 1440000, Iter Num: 48, Episode T: 3000 Reward: 35.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1443000, Iter Num: 49, Episode T: 3000 Reward: 60.000
+Total T: 1446000, Iter Num: 49, Episode T: 3000 Reward: 29.000
+Total T: 1449000, Iter Num: 49, Episode T: 3000 Reward: 60.000
+Total T: 1452000, Iter Num: 49, Episode T: 3000 Reward: 55.000
+Total T: 1455000, Iter Num: 49, Episode T: 3000 Reward: 60.000
+Total T: 1458000, Iter Num: 49, Episode T: 3000 Reward: 60.000
+Total T: 1461000, Iter Num: 49, Episode T: 3000 Reward: 60.000
+Total T: 1464000, Iter Num: 49, Episode T: 3000 Reward: 60.000
+Total T: 1467000, Iter Num: 49, Episode T: 3000 Reward: 25.000
+Total T: 1470000, Iter Num: 49, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1473000, Iter Num: 50, Episode T: 3000 Reward: 10.000
+Total T: 1476000, Iter Num: 50, Episode T: 3000 Reward: 15.000
+Total T: 1479000, Iter Num: 50, Episode T: 3000 Reward: 60.000
+Total T: 1482000, Iter Num: 50, Episode T: 3000 Reward: 60.000
+Total T: 1485000, Iter Num: 50, Episode T: 3000 Reward: 10.000
+Total T: 1488000, Iter Num: 50, Episode T: 3000 Reward: 60.000
+Total T: 1491000, Iter Num: 50, Episode T: 3000 Reward: 10.000
+Total T: 1494000, Iter Num: 50, Episode T: 3000 Reward: 15.000
+Total T: 1497000, Iter Num: 50, Episode T: 3000 Reward: 10.000
+Total T: 1500000, Iter Num: 50, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1503000, Iter Num: 51, Episode T: 3000 Reward: 60.000
+Total T: 1506000, Iter Num: 51, Episode T: 3000 Reward: 30.000
+Total T: 1509000, Iter Num: 51, Episode T: 3000 Reward: 60.000
+Total T: 1512000, Iter Num: 51, Episode T: 3000 Reward: 60.000
+Total T: 1515000, Iter Num: 51, Episode T: 3000 Reward: 60.000
+Total T: 1518000, Iter Num: 51, Episode T: 3000 Reward: 39.000
+Total T: 1521000, Iter Num: 51, Episode T: 3000 Reward: 60.000
+Total T: 1524000, Iter Num: 51, Episode T: 3000 Reward: 60.000
+Total T: 1527000, Iter Num: 51, Episode T: 3000 Reward: 9.000
+Total T: 1530000, Iter Num: 51, Episode T: 3000 Reward: 37.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1533000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1536000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1539000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1542000, Iter Num: 52, Episode T: 3000 Reward: 9.000
+Total T: 1545000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1548000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1551000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1554000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1557000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+Total T: 1560000, Iter Num: 52, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1563000, Iter Num: 53, Episode T: 3000 Reward: 60.000
+Total T: 1566000, Iter Num: 53, Episode T: 3000 Reward: 60.000
+Total T: 1569000, Iter Num: 53, Episode T: 3000 Reward: 60.000
+Total T: 1572000, Iter Num: 53, Episode T: 3000 Reward: 60.000
+Total T: 1575000, Iter Num: 53, Episode T: 3000 Reward: 60.000
+Total T: 1578000, Iter Num: 53, Episode T: 3000 Reward: 0.000
+Total T: 1581000, Iter Num: 53, Episode T: 3000 Reward: 19.000
+Total T: 1584000, Iter Num: 53, Episode T: 3000 Reward: 0.000
+Total T: 1587000, Iter Num: 53, Episode T: 3000 Reward: 60.000
+Total T: 1590000, Iter Num: 53, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1593000, Iter Num: 54, Episode T: 3000 Reward: 60.000
+Total T: 1596000, Iter Num: 54, Episode T: 3000 Reward: 0.000
+Total T: 1599000, Iter Num: 54, Episode T: 3000 Reward: 60.000
+Total T: 1602000, Iter Num: 54, Episode T: 3000 Reward: 60.000
+Total T: 1605000, Iter Num: 54, Episode T: 3000 Reward: 60.000
+Total T: 1608000, Iter Num: 54, Episode T: 3000 Reward: 10.000
+Total T: 1611000, Iter Num: 54, Episode T: 3000 Reward: 60.000
+Total T: 1614000, Iter Num: 54, Episode T: 3000 Reward: 60.000
+Total T: 1617000, Iter Num: 54, Episode T: 3000 Reward: 60.000
+Total T: 1620000, Iter Num: 54, Episode T: 3000 Reward: 9.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1623000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1626000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1629000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1632000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1635000, Iter Num: 55, Episode T: 3000 Reward: 0.000
+Total T: 1638000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1641000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1644000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1647000, Iter Num: 55, Episode T: 3000 Reward: 60.000
+Total T: 1650000, Iter Num: 55, Episode T: 3000 Reward: 20.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1653000, Iter Num: 56, Episode T: 3000 Reward: 18.000
+Total T: 1656000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1659000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1662000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1665000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1668000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1671000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1674000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1677000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+Total T: 1680000, Iter Num: 56, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1683000, Iter Num: 57, Episode T: 3000 Reward: 60.000
+Total T: 1686000, Iter Num: 57, Episode T: 3000 Reward: 60.000
+Total T: 1689000, Iter Num: 57, Episode T: 3000 Reward: 60.000
+Total T: 1692000, Iter Num: 57, Episode T: 3000 Reward: 21.000
+Total T: 1695000, Iter Num: 57, Episode T: 3000 Reward: 70.000
+Total T: 1698000, Iter Num: 57, Episode T: 3000 Reward: 15.000
+Total T: 1701000, Iter Num: 57, Episode T: 3000 Reward: 18.000
+Total T: 1704000, Iter Num: 57, Episode T: 3000 Reward: 60.000
+Total T: 1707000, Iter Num: 57, Episode T: 3000 Reward: 60.000
+Total T: 1710000, Iter Num: 57, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1713000, Iter Num: 58, Episode T: 3000 Reward: 6.000
+Total T: 1716000, Iter Num: 58, Episode T: 3000 Reward: 60.000
+Total T: 1719000, Iter Num: 58, Episode T: 3000 Reward: 6.000
+Total T: 1722000, Iter Num: 58, Episode T: 3000 Reward: 60.000
+Total T: 1725000, Iter Num: 58, Episode T: 3000 Reward: 60.000
+Total T: 1728000, Iter Num: 58, Episode T: 3000 Reward: 0.000
+Total T: 1731000, Iter Num: 58, Episode T: 3000 Reward: 6.000
+Total T: 1734000, Iter Num: 58, Episode T: 3000 Reward: 60.000
+Total T: 1737000, Iter Num: 58, Episode T: 3000 Reward: 60.000
+Total T: 1740000, Iter Num: 58, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 59.600
+---------------------------------------
+Total T: 1743000, Iter Num: 59, Episode T: 3000 Reward: 60.000
+Total T: 1746000, Iter Num: 59, Episode T: 3000 Reward: 60.000
+Total T: 1749000, Iter Num: 59, Episode T: 3000 Reward: 60.000
+Total T: 1752000, Iter Num: 59, Episode T: 3000 Reward: 60.000
+Total T: 1755000, Iter Num: 59, Episode T: 3000 Reward: 19.000
+Total T: 1758000, Iter Num: 59, Episode T: 3000 Reward: 60.000
+Total T: 1761000, Iter Num: 59, Episode T: 3000 Reward: 0.000
+Total T: 1764000, Iter Num: 59, Episode T: 3000 Reward: 60.000
+Total T: 1767000, Iter Num: 59, Episode T: 3000 Reward: 60.000
+Total T: 1770000, Iter Num: 59, Episode T: 3000 Reward: 23.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1773000, Iter Num: 60, Episode T: 3000 Reward: 18.000
+Total T: 1776000, Iter Num: 60, Episode T: 3000 Reward: 60.000
+Total T: 1779000, Iter Num: 60, Episode T: 3000 Reward: 60.000
+Total T: 1782000, Iter Num: 60, Episode T: 3000 Reward: 60.000
+Total T: 1785000, Iter Num: 60, Episode T: 3000 Reward: 60.000
+Total T: 1788000, Iter Num: 60, Episode T: 3000 Reward: 0.000
+Total T: 1791000, Iter Num: 60, Episode T: 3000 Reward: 0.000
+Total T: 1794000, Iter Num: 60, Episode T: 3000 Reward: 60.000
+Total T: 1797000, Iter Num: 60, Episode T: 3000 Reward: 60.000
+Total T: 1800000, Iter Num: 60, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1803000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1806000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1809000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1812000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1815000, Iter Num: 61, Episode T: 3000 Reward: 6.000
+Total T: 1818000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1821000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1824000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1827000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+Total T: 1830000, Iter Num: 61, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1833000, Iter Num: 62, Episode T: 3000 Reward: 20.000
+Total T: 1836000, Iter Num: 62, Episode T: 3000 Reward: 18.000
+Total T: 1839000, Iter Num: 62, Episode T: 3000 Reward: 0.000
+Total T: 1842000, Iter Num: 62, Episode T: 3000 Reward: 81.000
+Total T: 1845000, Iter Num: 62, Episode T: 3000 Reward: 60.000
+Total T: 1848000, Iter Num: 62, Episode T: 3000 Reward: 60.000
+Total T: 1851000, Iter Num: 62, Episode T: 3000 Reward: 60.000
+Total T: 1854000, Iter Num: 62, Episode T: 3000 Reward: 60.000
+Total T: 1857000, Iter Num: 62, Episode T: 3000 Reward: 60.000
+Total T: 1860000, Iter Num: 62, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1863000, Iter Num: 63, Episode T: 3000 Reward: 60.000
+Total T: 1866000, Iter Num: 63, Episode T: 3000 Reward: 6.000
+Total T: 1869000, Iter Num: 63, Episode T: 3000 Reward: 60.000
+Total T: 1872000, Iter Num: 63, Episode T: 3000 Reward: 28.000
+Total T: 1875000, Iter Num: 63, Episode T: 3000 Reward: 60.000
+Total T: 1878000, Iter Num: 63, Episode T: 3000 Reward: 60.000
+Total T: 1881000, Iter Num: 63, Episode T: 3000 Reward: 19.000
+Total T: 1884000, Iter Num: 63, Episode T: 3000 Reward: 60.000
+Total T: 1887000, Iter Num: 63, Episode T: 3000 Reward: 60.000
+Total T: 1890000, Iter Num: 63, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1893000, Iter Num: 64, Episode T: 3000 Reward: 60.000
+Total T: 1896000, Iter Num: 64, Episode T: 3000 Reward: 60.000
+Total T: 1899000, Iter Num: 64, Episode T: 3000 Reward: 60.000
+Total T: 1902000, Iter Num: 64, Episode T: 3000 Reward: 6.000
+Total T: 1905000, Iter Num: 64, Episode T: 3000 Reward: 6.000
+Total T: 1908000, Iter Num: 64, Episode T: 3000 Reward: 21.000
+Total T: 1911000, Iter Num: 64, Episode T: 3000 Reward: 60.000
+Total T: 1914000, Iter Num: 64, Episode T: 3000 Reward: 6.000
+Total T: 1917000, Iter Num: 64, Episode T: 3000 Reward: 60.000
+Total T: 1920000, Iter Num: 64, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1923000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+Total T: 1926000, Iter Num: 65, Episode T: 3000 Reward: 18.000
+Total T: 1929000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+Total T: 1932000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+Total T: 1935000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+Total T: 1938000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+Total T: 1941000, Iter Num: 65, Episode T: 3000 Reward: 18.000
+Total T: 1944000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+Total T: 1947000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+Total T: 1950000, Iter Num: 65, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1953000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1956000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1959000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1962000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1965000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1968000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1971000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1974000, Iter Num: 66, Episode T: 3000 Reward: 60.000
+Total T: 1977000, Iter Num: 66, Episode T: 3000 Reward: 6.000
+Total T: 1980000, Iter Num: 66, Episode T: 3000 Reward: 24.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 1983000, Iter Num: 67, Episode T: 3000 Reward: 60.000
+Total T: 1986000, Iter Num: 67, Episode T: 3000 Reward: 21.000
+Total T: 1989000, Iter Num: 67, Episode T: 3000 Reward: 56.000
+Total T: 1992000, Iter Num: 67, Episode T: 3000 Reward: 22.000
+Total T: 1995000, Iter Num: 67, Episode T: 3000 Reward: 69.000
+Total T: 1998000, Iter Num: 67, Episode T: 3000 Reward: 60.000
+Total T: 2001000, Iter Num: 67, Episode T: 3000 Reward: 60.000
+Total T: 2004000, Iter Num: 67, Episode T: 3000 Reward: 60.000
+Total T: 2007000, Iter Num: 67, Episode T: 3000 Reward: 22.000
+Total T: 2010000, Iter Num: 67, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.500
+---------------------------------------
+Total T: 2013000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+Total T: 2016000, Iter Num: 68, Episode T: 3000 Reward: 71.000
+Total T: 2019000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+Total T: 2022000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+Total T: 2025000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+Total T: 2028000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+Total T: 2031000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+Total T: 2034000, Iter Num: 68, Episode T: 3000 Reward: 28.000
+Total T: 2037000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+Total T: 2040000, Iter Num: 68, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 61.900
+---------------------------------------
+Total T: 2043000, Iter Num: 69, Episode T: 3000 Reward: 93.000
+Total T: 2046000, Iter Num: 69, Episode T: 3000 Reward: 84.000
+Total T: 2049000, Iter Num: 69, Episode T: 3000 Reward: 60.000
+Total T: 2052000, Iter Num: 69, Episode T: 3000 Reward: 36.000
+Total T: 2055000, Iter Num: 69, Episode T: 3000 Reward: 35.000
+Total T: 2058000, Iter Num: 69, Episode T: 3000 Reward: 60.000
+Total T: 2061000, Iter Num: 69, Episode T: 3000 Reward: 60.000
+Total T: 2064000, Iter Num: 69, Episode T: 3000 Reward: 60.000
+Total T: 2067000, Iter Num: 69, Episode T: 3000 Reward: 18.000
+Total T: 2070000, Iter Num: 69, Episode T: 3000 Reward: 35.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.100
+---------------------------------------
+Total T: 2073000, Iter Num: 70, Episode T: 3000 Reward: 60.000
+Total T: 2076000, Iter Num: 70, Episode T: 3000 Reward: 43.000
+Total T: 2079000, Iter Num: 70, Episode T: 3000 Reward: 61.000
+Total T: 2082000, Iter Num: 70, Episode T: 3000 Reward: 42.000
+Total T: 2085000, Iter Num: 70, Episode T: 3000 Reward: 50.000
+Total T: 2088000, Iter Num: 70, Episode T: 3000 Reward: 42.000
+Total T: 2091000, Iter Num: 70, Episode T: 3000 Reward: 60.000
+Total T: 2094000, Iter Num: 70, Episode T: 3000 Reward: 43.000
+Total T: 2097000, Iter Num: 70, Episode T: 3000 Reward: 60.000
+Total T: 2100000, Iter Num: 70, Episode T: 3000 Reward: 70.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 2103000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2106000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2109000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2112000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2115000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2118000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2121000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2124000, Iter Num: 71, Episode T: 3000 Reward: 61.000
+Total T: 2127000, Iter Num: 71, Episode T: 3000 Reward: 60.000
+Total T: 2130000, Iter Num: 71, Episode T: 3000 Reward: 31.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 60.000
+---------------------------------------
+Total T: 2133000, Iter Num: 72, Episode T: 3000 Reward: 60.000
+Total T: 2136000, Iter Num: 72, Episode T: 3000 Reward: 43.000
+Total T: 2139000, Iter Num: 72, Episode T: 3000 Reward: 60.000
+Total T: 2142000, Iter Num: 72, Episode T: 3000 Reward: 43.000
+Total T: 2145000, Iter Num: 72, Episode T: 3000 Reward: 60.000
+Total T: 2148000, Iter Num: 72, Episode T: 3000 Reward: 42.000
+Total T: 2151000, Iter Num: 72, Episode T: 3000 Reward: 43.000
+Total T: 2154000, Iter Num: 72, Episode T: 3000 Reward: 42.000
+Total T: 2157000, Iter Num: 72, Episode T: 3000 Reward: 72.000
+Total T: 2160000, Iter Num: 72, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 57.100
+---------------------------------------
+Total T: 2163000, Iter Num: 73, Episode T: 3000 Reward: 60.000
+Total T: 2166000, Iter Num: 73, Episode T: 3000 Reward: 60.000
+Total T: 2169000, Iter Num: 73, Episode T: 3000 Reward: 60.000
+Total T: 2172000, Iter Num: 73, Episode T: 3000 Reward: 60.000
+Total T: 2175000, Iter Num: 73, Episode T: 3000 Reward: 29.000
+Total T: 2178000, Iter Num: 73, Episode T: 3000 Reward: 37.000
+Total T: 2181000, Iter Num: 73, Episode T: 3000 Reward: 40.000
+Total T: 2184000, Iter Num: 73, Episode T: 3000 Reward: 56.000
+Total T: 2187000, Iter Num: 73, Episode T: 3000 Reward: 60.000
+Total T: 2190000, Iter Num: 73, Episode T: 3000 Reward: 60.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 38.600
+---------------------------------------
+Total T: 2193000, Iter Num: 74, Episode T: 3000 Reward: 43.000
+Total T: 2196000, Iter Num: 74, Episode T: 3000 Reward: 81.000
+Total T: 2199000, Iter Num: 74, Episode T: 3000 Reward: 97.000
+Total T: 2202000, Iter Num: 74, Episode T: 3000 Reward: 60.000
+Total T: 2205000, Iter Num: 74, Episode T: 3000 Reward: 43.000
+Total T: 2208000, Iter Num: 74, Episode T: 3000 Reward: 103.000
+Total T: 2211000, Iter Num: 74, Episode T: 3000 Reward: 102.000
+Total T: 2214000, Iter Num: 74, Episode T: 3000 Reward: 43.000
+Total T: 2217000, Iter Num: 74, Episode T: 3000 Reward: 60.000
+Total T: 2220000, Iter Num: 74, Episode T: 3000 Reward: 21.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 51.800
+---------------------------------------
+Total T: 2223000, Iter Num: 75, Episode T: 3000 Reward: 28.000
+Total T: 2226000, Iter Num: 75, Episode T: 3000 Reward: 0.000
+Total T: 2229000, Iter Num: 75, Episode T: 3000 Reward: 81.000
+Total T: 2232000, Iter Num: 75, Episode T: 3000 Reward: 60.000
+Total T: 2235000, Iter Num: 75, Episode T: 3000 Reward: 31.000
+Total T: 2238000, Iter Num: 75, Episode T: 3000 Reward: 60.000
+Total T: 2241000, Iter Num: 75, Episode T: 3000 Reward: 60.000
+Total T: 2244000, Iter Num: 75, Episode T: 3000 Reward: 88.000
+Total T: 2247000, Iter Num: 75, Episode T: 3000 Reward: 0.000
+Total T: 2250000, Iter Num: 75, Episode T: 3000 Reward: 46.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 27.600
+---------------------------------------
+Total T: 2253000, Iter Num: 76, Episode T: 3000 Reward: 20.000
+Total T: 2256000, Iter Num: 76, Episode T: 3000 Reward: 21.000
+Total T: 2259000, Iter Num: 76, Episode T: 3000 Reward: 43.000
+Total T: 2262000, Iter Num: 76, Episode T: 3000 Reward: 21.000
+Total T: 2265000, Iter Num: 76, Episode T: 3000 Reward: 21.000
+Total T: 2268000, Iter Num: 76, Episode T: 3000 Reward: 28.000
+Total T: 2271000, Iter Num: 76, Episode T: 3000 Reward: 21.000
+Total T: 2274000, Iter Num: 76, Episode T: 3000 Reward: 81.000
+Total T: 2277000, Iter Num: 76, Episode T: 3000 Reward: 21.000
+Total T: 2280000, Iter Num: 76, Episode T: 3000 Reward: 73.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 23.200
+---------------------------------------
+Total T: 2283000, Iter Num: 77, Episode T: 3000 Reward: 82.000
+Total T: 2286000, Iter Num: 77, Episode T: 3000 Reward: 19.000
+Total T: 2289000, Iter Num: 77, Episode T: 3000 Reward: 19.000
+Total T: 2292000, Iter Num: 77, Episode T: 3000 Reward: 21.000
+Total T: 2295000, Iter Num: 77, Episode T: 3000 Reward: 21.000
+Total T: 2298000, Iter Num: 77, Episode T: 3000 Reward: 52.000
+Total T: 2301000, Iter Num: 77, Episode T: 3000 Reward: 21.000
+Total T: 2304000, Iter Num: 77, Episode T: 3000 Reward: 21.000
+Total T: 2307000, Iter Num: 77, Episode T: 3000 Reward: 28.000
+Total T: 2310000, Iter Num: 77, Episode T: 3000 Reward: 21.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 26.700
+---------------------------------------
+Total T: 2313000, Iter Num: 78, Episode T: 3000 Reward: 21.000
+Total T: 2316000, Iter Num: 78, Episode T: 3000 Reward: 81.000
+Total T: 2319000, Iter Num: 78, Episode T: 3000 Reward: 21.000
+Total T: 2322000, Iter Num: 78, Episode T: 3000 Reward: 81.000
+Total T: 2325000, Iter Num: 78, Episode T: 3000 Reward: 40.000
+Total T: 2328000, Iter Num: 78, Episode T: 3000 Reward: 39.000
+Total T: 2331000, Iter Num: 78, Episode T: 3000 Reward: 21.000
+Total T: 2334000, Iter Num: 78, Episode T: 3000 Reward: 60.000
+Total T: 2337000, Iter Num: 78, Episode T: 3000 Reward: 21.000
+Total T: 2340000, Iter Num: 78, Episode T: 3000 Reward: 0.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 23.400
+---------------------------------------
+Total T: 2343000, Iter Num: 79, Episode T: 3000 Reward: 30.000
+Total T: 2346000, Iter Num: 79, Episode T: 3000 Reward: 21.000
+Total T: 2349000, Iter Num: 79, Episode T: 3000 Reward: 17.000
+Total T: 2352000, Iter Num: 79, Episode T: 3000 Reward: 21.000
+Total T: 2355000, Iter Num: 79, Episode T: 3000 Reward: 21.000
+Total T: 2358000, Iter Num: 79, Episode T: 3000 Reward: 21.000
+Total T: 2361000, Iter Num: 79, Episode T: 3000 Reward: 81.000
+Total T: 2364000, Iter Num: 79, Episode T: 3000 Reward: 21.000
+Total T: 2367000, Iter Num: 79, Episode T: 3000 Reward: 25.000
+Total T: 2370000, Iter Num: 79, Episode T: 3000 Reward: 21.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 19.200
+---------------------------------------
+Total T: 2373000, Iter Num: 80, Episode T: 3000 Reward: 7.000
+Total T: 2376000, Iter Num: 80, Episode T: 3000 Reward: 79.000
+Total T: 2379000, Iter Num: 80, Episode T: 3000 Reward: 19.000
+Total T: 2382000, Iter Num: 80, Episode T: 3000 Reward: 19.000
+Total T: 2385000, Iter Num: 80, Episode T: 3000 Reward: 19.000
+Total T: 2388000, Iter Num: 80, Episode T: 3000 Reward: 19.000
+Total T: 2391000, Iter Num: 80, Episode T: 3000 Reward: 20.000
+Total T: 2394000, Iter Num: 80, Episode T: 3000 Reward: 19.000
+Total T: 2397000, Iter Num: 80, Episode T: 3000 Reward: 19.000
+Total T: 2400000, Iter Num: 80, Episode T: 3000 Reward: 79.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 19.000
+---------------------------------------
+Total T: 2403000, Iter Num: 81, Episode T: 3000 Reward: 19.000
+Total T: 2406000, Iter Num: 81, Episode T: 3000 Reward: 19.000
+Total T: 2409000, Iter Num: 81, Episode T: 3000 Reward: 53.000
+Total T: 2412000, Iter Num: 81, Episode T: 3000 Reward: 19.000
+Total T: 2415000, Iter Num: 81, Episode T: 3000 Reward: 19.000
+Total T: 2418000, Iter Num: 81, Episode T: 3000 Reward: 23.000
+Total T: 2421000, Iter Num: 81, Episode T: 3000 Reward: 19.000
+Total T: 2424000, Iter Num: 81, Episode T: 3000 Reward: 80.000
+Total T: 2427000, Iter Num: 81, Episode T: 3000 Reward: 19.000
+Total T: 2430000, Iter Num: 81, Episode T: 3000 Reward: 19.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 20.600
+---------------------------------------
+Total T: 2433000, Iter Num: 82, Episode T: 3000 Reward: 57.000
+Total T: 2436000, Iter Num: 82, Episode T: 3000 Reward: 79.000
+Total T: 2439000, Iter Num: 82, Episode T: 3000 Reward: 79.000
+Total T: 2442000, Iter Num: 82, Episode T: 3000 Reward: 20.000
+Total T: 2445000, Iter Num: 82, Episode T: 3000 Reward: 19.000
+Total T: 2448000, Iter Num: 82, Episode T: 3000 Reward: 19.000
+Total T: 2451000, Iter Num: 82, Episode T: 3000 Reward: 79.000
+Total T: 2454000, Iter Num: 82, Episode T: 3000 Reward: 20.000
+Total T: 2457000, Iter Num: 82, Episode T: 3000 Reward: 19.000
+Total T: 2460000, Iter Num: 82, Episode T: 3000 Reward: 19.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 19.000
+---------------------------------------
+Total T: 2463000, Iter Num: 83, Episode T: 3000 Reward: 19.000
+Total T: 2466000, Iter Num: 83, Episode T: 3000 Reward: 37.000
+Total T: 2469000, Iter Num: 83, Episode T: 3000 Reward: 0.000
+Total T: 2472000, Iter Num: 83, Episode T: 3000 Reward: 30.000
+Total T: 2475000, Iter Num: 83, Episode T: 3000 Reward: 19.000
+Total T: 2478000, Iter Num: 83, Episode T: 3000 Reward: 19.000
+Total T: 2481000, Iter Num: 83, Episode T: 3000 Reward: 19.000
+Total T: 2484000, Iter Num: 83, Episode T: 3000 Reward: 19.000
+Total T: 2487000, Iter Num: 83, Episode T: 3000 Reward: 19.000
+Total T: 2490000, Iter Num: 83, Episode T: 3000 Reward: 19.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 19.000
+---------------------------------------
+Total T: 2493000, Iter Num: 84, Episode T: 3000 Reward: 19.000
+Total T: 2496000, Iter Num: 84, Episode T: 3000 Reward: 11.000
+Total T: 2499000, Iter Num: 84, Episode T: 3000 Reward: 19.000
+Total T: 2502000, Iter Num: 84, Episode T: 3000 Reward: 19.000
+Total T: 2505000, Iter Num: 84, Episode T: 3000 Reward: 19.000
+Total T: 2508000, Iter Num: 84, Episode T: 3000 Reward: 69.000
+Total T: 2511000, Iter Num: 84, Episode T: 3000 Reward: 0.000
+Total T: 2514000, Iter Num: 84, Episode T: 3000 Reward: 19.000
+Total T: 2517000, Iter Num: 84, Episode T: 3000 Reward: 79.000
+Total T: 2520000, Iter Num: 84, Episode T: 3000 Reward: 50.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 20.500
+---------------------------------------
+Total T: 2523000, Iter Num: 85, Episode T: 3000 Reward: 79.000
+Total T: 2526000, Iter Num: 85, Episode T: 3000 Reward: 20.000
+Total T: 2529000, Iter Num: 85, Episode T: 3000 Reward: 0.000
+Total T: 2532000, Iter Num: 85, Episode T: 3000 Reward: 23.000
+Total T: 2535000, Iter Num: 85, Episode T: 3000 Reward: 79.000
+Total T: 2538000, Iter Num: 85, Episode T: 3000 Reward: 15.000
+Total T: 2541000, Iter Num: 85, Episode T: 3000 Reward: 80.000
+Total T: 2544000, Iter Num: 85, Episode T: 3000 Reward: 20.000
+Total T: 2547000, Iter Num: 85, Episode T: 3000 Reward: 20.000
+Total T: 2550000, Iter Num: 85, Episode T: 3000 Reward: 0.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.000
+---------------------------------------
+Total T: 2553000, Iter Num: 86, Episode T: 3000 Reward: 18.000
+Total T: 2556000, Iter Num: 86, Episode T: 3000 Reward: 18.000
+Total T: 2559000, Iter Num: 86, Episode T: 3000 Reward: 73.000
+Total T: 2562000, Iter Num: 86, Episode T: 3000 Reward: 60.000
+Total T: 2565000, Iter Num: 86, Episode T: 3000 Reward: 18.000
+Total T: 2568000, Iter Num: 86, Episode T: 3000 Reward: 18.000
+Total T: 2571000, Iter Num: 86, Episode T: 3000 Reward: 18.000
+Total T: 2574000, Iter Num: 86, Episode T: 3000 Reward: 18.000
+Total T: 2577000, Iter Num: 86, Episode T: 3000 Reward: 23.000
+Total T: 2580000, Iter Num: 86, Episode T: 3000 Reward: 51.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.000
+---------------------------------------
+Total T: 2583000, Iter Num: 87, Episode T: 3000 Reward: 18.000
+Total T: 2586000, Iter Num: 87, Episode T: 3000 Reward: 78.000
+Total T: 2589000, Iter Num: 87, Episode T: 3000 Reward: 78.000
+Total T: 2592000, Iter Num: 87, Episode T: 3000 Reward: 18.000
+Total T: 2595000, Iter Num: 87, Episode T: 3000 Reward: 18.000
+Total T: 2598000, Iter Num: 87, Episode T: 3000 Reward: 78.000
+Total T: 2601000, Iter Num: 87, Episode T: 3000 Reward: 29.000
+Total T: 2604000, Iter Num: 87, Episode T: 3000 Reward: 25.000
+Total T: 2607000, Iter Num: 87, Episode T: 3000 Reward: 18.000
+Total T: 2610000, Iter Num: 87, Episode T: 3000 Reward: 18.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.000
+---------------------------------------
+Total T: 2613000, Iter Num: 88, Episode T: 3000 Reward: 18.000
+Total T: 2616000, Iter Num: 88, Episode T: 3000 Reward: 18.000
+Total T: 2619000, Iter Num: 88, Episode T: 3000 Reward: 18.000
+Total T: 2622000, Iter Num: 88, Episode T: 3000 Reward: 2.000
+Total T: 2625000, Iter Num: 88, Episode T: 3000 Reward: 78.000
+Total T: 2628000, Iter Num: 88, Episode T: 3000 Reward: 66.000
+Total T: 2631000, Iter Num: 88, Episode T: 3000 Reward: 78.000
+Total T: 2634000, Iter Num: 88, Episode T: 3000 Reward: 18.000
+Total T: 2637000, Iter Num: 88, Episode T: 3000 Reward: 18.000
+Total T: 2640000, Iter Num: 88, Episode T: 3000 Reward: 0.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.000
+---------------------------------------
+Total T: 2643000, Iter Num: 89, Episode T: 3000 Reward: 66.000
+Total T: 2646000, Iter Num: 89, Episode T: 3000 Reward: 18.000
+Total T: 2649000, Iter Num: 89, Episode T: 3000 Reward: 18.000
+Total T: 2652000, Iter Num: 89, Episode T: 3000 Reward: 18.000
+Total T: 2655000, Iter Num: 89, Episode T: 3000 Reward: 78.000
+Total T: 2658000, Iter Num: 89, Episode T: 3000 Reward: 18.000
+Total T: 2661000, Iter Num: 89, Episode T: 3000 Reward: 0.000
+Total T: 2664000, Iter Num: 89, Episode T: 3000 Reward: 18.000
+Total T: 2667000, Iter Num: 89, Episode T: 3000 Reward: 18.000
+Total T: 2670000, Iter Num: 89, Episode T: 3000 Reward: 18.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.000
+---------------------------------------
+Total T: 2673000, Iter Num: 90, Episode T: 3000 Reward: 19.000
+Total T: 2676000, Iter Num: 90, Episode T: 3000 Reward: 6.000
+Total T: 2679000, Iter Num: 90, Episode T: 3000 Reward: 78.000
+Total T: 2682000, Iter Num: 90, Episode T: 3000 Reward: 78.000
+Total T: 2685000, Iter Num: 90, Episode T: 3000 Reward: 18.000
+Total T: 2688000, Iter Num: 90, Episode T: 3000 Reward: 83.000
+Total T: 2691000, Iter Num: 90, Episode T: 3000 Reward: 36.000
+Total T: 2694000, Iter Num: 90, Episode T: 3000 Reward: 17.000
+Total T: 2697000, Iter Num: 90, Episode T: 3000 Reward: 18.000
+Total T: 2700000, Iter Num: 90, Episode T: 3000 Reward: 58.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 27.500
+---------------------------------------
+Total T: 2703000, Iter Num: 91, Episode T: 3000 Reward: 0.000
+Total T: 2706000, Iter Num: 91, Episode T: 3000 Reward: 13.000
+Total T: 2709000, Iter Num: 91, Episode T: 3000 Reward: 0.000
+Total T: 2712000, Iter Num: 91, Episode T: 3000 Reward: 85.000
+Total T: 2715000, Iter Num: 91, Episode T: 3000 Reward: 20.000
+Total T: 2718000, Iter Num: 91, Episode T: 3000 Reward: 21.000
+Total T: 2721000, Iter Num: 91, Episode T: 3000 Reward: 20.000
+Total T: 2724000, Iter Num: 91, Episode T: 3000 Reward: 20.000
+Total T: 2727000, Iter Num: 91, Episode T: 3000 Reward: 20.000
+Total T: 2730000, Iter Num: 91, Episode T: 3000 Reward: 46.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.000
+---------------------------------------
+Total T: 2733000, Iter Num: 92, Episode T: 3000 Reward: 41.000
+Total T: 2736000, Iter Num: 92, Episode T: 3000 Reward: 18.000
+Total T: 2739000, Iter Num: 92, Episode T: 3000 Reward: 15.000
+Total T: 2742000, Iter Num: 92, Episode T: 3000 Reward: 18.000
+Total T: 2745000, Iter Num: 92, Episode T: 3000 Reward: 78.000
+Total T: 2748000, Iter Num: 92, Episode T: 3000 Reward: 72.000
+Total T: 2751000, Iter Num: 92, Episode T: 3000 Reward: 78.000
+Total T: 2754000, Iter Num: 92, Episode T: 3000 Reward: 34.000
+Total T: 2757000, Iter Num: 92, Episode T: 3000 Reward: 10.000
+Total T: 2760000, Iter Num: 92, Episode T: 3000 Reward: 72.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.200
+---------------------------------------
+Total T: 2763000, Iter Num: 93, Episode T: 3000 Reward: 73.000
+Total T: 2766000, Iter Num: 93, Episode T: 3000 Reward: 18.000
+Total T: 2769000, Iter Num: 93, Episode T: 3000 Reward: 18.000
+Total T: 2772000, Iter Num: 93, Episode T: 3000 Reward: 18.000
+Total T: 2775000, Iter Num: 93, Episode T: 3000 Reward: 0.000
+Total T: 2778000, Iter Num: 93, Episode T: 3000 Reward: 0.000
+Total T: 2781000, Iter Num: 93, Episode T: 3000 Reward: 18.000
+Total T: 2784000, Iter Num: 93, Episode T: 3000 Reward: 18.000
+Total T: 2787000, Iter Num: 93, Episode T: 3000 Reward: 19.000
+Total T: 2790000, Iter Num: 93, Episode T: 3000 Reward: 18.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 20.200
+---------------------------------------
+Total T: 2793000, Iter Num: 94, Episode T: 3000 Reward: 76.000
+Total T: 2796000, Iter Num: 94, Episode T: 3000 Reward: 0.000
+Total T: 2799000, Iter Num: 94, Episode T: 3000 Reward: 18.000
+Total T: 2802000, Iter Num: 94, Episode T: 3000 Reward: 18.000
+Total T: 2805000, Iter Num: 94, Episode T: 3000 Reward: 51.000
+Total T: 2808000, Iter Num: 94, Episode T: 3000 Reward: 73.000
+Total T: 2811000, Iter Num: 94, Episode T: 3000 Reward: 18.000
+Total T: 2814000, Iter Num: 94, Episode T: 3000 Reward: 18.000
+Total T: 2817000, Iter Num: 94, Episode T: 3000 Reward: 18.000
+Total T: 2820000, Iter Num: 94, Episode T: 3000 Reward: 74.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 49.700
+---------------------------------------
+Total T: 2823000, Iter Num: 95, Episode T: 3000 Reward: 18.000
+Total T: 2826000, Iter Num: 95, Episode T: 3000 Reward: 75.000
+Total T: 2829000, Iter Num: 95, Episode T: 3000 Reward: 18.000
+Total T: 2832000, Iter Num: 95, Episode T: 3000 Reward: 18.000
+Total T: 2835000, Iter Num: 95, Episode T: 3000 Reward: 18.000
+Total T: 2838000, Iter Num: 95, Episode T: 3000 Reward: 39.000
+Total T: 2841000, Iter Num: 95, Episode T: 3000 Reward: 69.000
+Total T: 2844000, Iter Num: 95, Episode T: 3000 Reward: 38.000
+Total T: 2847000, Iter Num: 95, Episode T: 3000 Reward: 18.000
+Total T: 2850000, Iter Num: 95, Episode T: 3000 Reward: 15.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 62.300
+---------------------------------------
+Total T: 2853000, Iter Num: 96, Episode T: 3000 Reward: 18.000
+Total T: 2856000, Iter Num: 96, Episode T: 3000 Reward: 18.000
+Total T: 2859000, Iter Num: 96, Episode T: 3000 Reward: 18.000
+Total T: 2862000, Iter Num: 96, Episode T: 3000 Reward: 18.000
+Total T: 2865000, Iter Num: 96, Episode T: 3000 Reward: 56.000
+Total T: 2868000, Iter Num: 96, Episode T: 3000 Reward: 18.000
+Total T: 2871000, Iter Num: 96, Episode T: 3000 Reward: 55.000
+Total T: 2874000, Iter Num: 96, Episode T: 3000 Reward: 88.000
+Total T: 2877000, Iter Num: 96, Episode T: 3000 Reward: 67.000
+Total T: 2880000, Iter Num: 96, Episode T: 3000 Reward: 43.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 73.900
+---------------------------------------
+Total T: 2883000, Iter Num: 97, Episode T: 3000 Reward: 72.000
+Total T: 2886000, Iter Num: 97, Episode T: 3000 Reward: 18.000
+Total T: 2889000, Iter Num: 97, Episode T: 3000 Reward: 18.000
+Total T: 2892000, Iter Num: 97, Episode T: 3000 Reward: 36.000
+Total T: 2895000, Iter Num: 97, Episode T: 3000 Reward: 18.000
+Total T: 2898000, Iter Num: 97, Episode T: 3000 Reward: 24.000
+Total T: 2901000, Iter Num: 97, Episode T: 3000 Reward: 15.000
+Total T: 2904000, Iter Num: 97, Episode T: 3000 Reward: 68.000
+Total T: 2907000, Iter Num: 97, Episode T: 3000 Reward: 18.000
+Total T: 2910000, Iter Num: 97, Episode T: 3000 Reward: 18.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 18.100
+---------------------------------------
+Total T: 2913000, Iter Num: 98, Episode T: 3000 Reward: 18.000
+Total T: 2916000, Iter Num: 98, Episode T: 3000 Reward: 20.000
+Total T: 2919000, Iter Num: 98, Episode T: 3000 Reward: 40.000
+Total T: 2922000, Iter Num: 98, Episode T: 3000 Reward: 18.000
+Total T: 2925000, Iter Num: 98, Episode T: 3000 Reward: 31.000
+Total T: 2928000, Iter Num: 98, Episode T: 3000 Reward: 24.000
+Total T: 2931000, Iter Num: 98, Episode T: 3000 Reward: 18.000
+Total T: 2934000, Iter Num: 98, Episode T: 3000 Reward: 34.000
+Total T: 2937000, Iter Num: 98, Episode T: 3000 Reward: 15.000
+Total T: 2940000, Iter Num: 98, Episode T: 3000 Reward: 80.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 34.100
+---------------------------------------
+Total T: 2943000, Iter Num: 99, Episode T: 3000 Reward: 43.000
+Total T: 2946000, Iter Num: 99, Episode T: 3000 Reward: 69.000
+Total T: 2949000, Iter Num: 99, Episode T: 3000 Reward: 18.000
+Total T: 2952000, Iter Num: 99, Episode T: 3000 Reward: 18.000
+Total T: 2955000, Iter Num: 99, Episode T: 3000 Reward: 28.000
+Total T: 2958000, Iter Num: 99, Episode T: 3000 Reward: 42.000
+Total T: 2961000, Iter Num: 99, Episode T: 3000 Reward: 26.000
+Total T: 2964000, Iter Num: 99, Episode T: 3000 Reward: 27.000
+Total T: 2967000, Iter Num: 99, Episode T: 3000 Reward: 78.000
+Total T: 2970000, Iter Num: 99, Episode T: 3000 Reward: 18.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 30.400
+---------------------------------------
+Total T: 2973000, Iter Num: 100, Episode T: 3000 Reward: 18.000
+Total T: 2976000, Iter Num: 100, Episode T: 3000 Reward: 74.000
+Total T: 2979000, Iter Num: 100, Episode T: 3000 Reward: 15.000
+Total T: 2982000, Iter Num: 100, Episode T: 3000 Reward: 18.000
+Total T: 2985000, Iter Num: 100, Episode T: 3000 Reward: 18.000
+Total T: 2988000, Iter Num: 100, Episode T: 3000 Reward: 76.000
+Total T: 2991000, Iter Num: 100, Episode T: 3000 Reward: 37.000
+Total T: 2994000, Iter Num: 100, Episode T: 3000 Reward: 18.000
+Total T: 2997000, Iter Num: 100, Episode T: 3000 Reward: 18.000
+Total T: 3000000, Iter Num: 100, Episode T: 3000 Reward: 15.000
+---------------------------------------
+Seed 5, Evaluation over 10, episodes: 30.300
+---------------------------------------
