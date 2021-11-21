@@ -674,7 +674,31 @@ for trj in coins_array:
     
 
 save_obj(HIL_best_nOptions_1, 'HIL_ablation_study/Best_results_nOptions_1')
+# %%
+IL_RL_best_nOptions_1 = {}
 
+coins_array = range(50)
+
+PPO_RL_AllHumans = [[[] for i in range(8)] for coin in coins_array]
+
+j=0
+for human in coins_array:
+    IL_RL_best_nOptions_1_traj = {}
+    IL_RL_best_nOptions_1[f'IL_RL_traj_{human}'] = IL_RL_best_nOptions_1_traj
+    
+    for i in range(8):
+        with open(f'results/HRL/evaluation_PPO_HIL_True_traj_{human}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+            PPO_RL_AllHumans[j][i] = np.load(f, allow_pickle=True)
+            
+    reward_array = np.array(PPO_RL_AllHumans[j])
+    best_seed = np.argmax(reward_array[:,-1])
+    
+    IL_RL_best_nOptions_1[f'IL_RL_traj_{human}']['best_seed'] = best_seed
+    IL_RL_best_nOptions_1[f'IL_RL_traj_{human}']['traj'] = human
+            
+    j+=1
+
+save_obj(IL_RL_best_nOptions_1, 'IL_RL_best_nOptions_1')
 # %%
 
 def save_obj(obj, name):

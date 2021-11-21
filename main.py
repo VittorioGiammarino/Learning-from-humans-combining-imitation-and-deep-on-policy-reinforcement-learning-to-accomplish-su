@@ -136,75 +136,7 @@ def HRL(env, args, seed):
         if args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
-        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}")           
-        elif args.load_model and args.HIL:
-        	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
-                  	
-        # Evaluate untrained policy
-        evaluation_RL = []
-        avg_reward = eval_policy(seed, Agent_RL, env, args.evaluation_max_n_steps, args.evaluation_episodes, 'standard', TrainingSet[0,:])
-        evaluation_RL.append(avg_reward) 
-        
-        for i in range(int(args.max_iter)):
-                        
-            _, _ = Agent_RL.GAE(env)
-            Agent_RL.train(Entropy = True)
-                 
-            # Evaluate episode
-            if (i + 1) % args.eval_freq == 0:
-                avg_reward = eval_policy(seed, Agent_RL, env, args.evaluation_max_n_steps, args.evaluation_episodes, 'standard', TrainingSet[0,:])
-                evaluation_RL.append(avg_reward)      
-                 
-        return evaluation_RL, Agent_RL
-    
-    if args.policy == "TRPO":        
-        kwargs = {
-         "state_dim": state_dim,
-         "action_dim": action_dim,
-         "encoding_info": encoding_info,
-         "num_steps_per_rollout": args.number_steps_per_iter
-        }
-
-        Agent_RL = TRPO.TRPO(**kwargs)
-        
-        if args.load_model and args.HIL and args.load_HIL_model:
-            Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
-        elif args.load_model and args.adv_reward:
-        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}")           
-        elif args.load_model and args.HIL:
-        	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
-                  	
-        # Evaluate untrained policy
-        evaluation_RL = []
-        avg_reward = eval_policy(seed, Agent_RL, env, args.evaluation_max_n_steps, args.evaluation_episodes, 'standard', TrainingSet[0,:])
-        evaluation_RL.append(avg_reward) 
-        
-        for i in range(int(args.max_iter)):
-                        
-            _, _ = Agent_RL.GAE(env)
-            Agent_RL.train(Entropy = True)
-                 
-            # Evaluate episode
-            if (i + 1) % args.eval_freq == 0:
-                avg_reward = eval_policy(seed, Agent_RL, env, args.evaluation_max_n_steps, args.evaluation_episodes, 'standard', TrainingSet[0,:])
-                evaluation_RL.append(avg_reward)      
-                 
-        return evaluation_RL, Agent_RL
-    
-    if args.policy == "UATRPO":        
-        kwargs = {
-         "state_dim": state_dim,
-         "action_dim": action_dim,
-         "encoding_info": encoding_info,
-         "num_steps_per_rollout": args.number_steps_per_iter
-        }
-
-        Agent_RL = UATRPO.UATRPO(**kwargs)
-        
-        if args.load_model and args.HIL and args.load_HIL_model:
-            Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
-        elif args.load_model and args.adv_reward:
-        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}")           
+        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
                   	
@@ -238,7 +170,7 @@ def HRL(env, args, seed):
         if args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
-        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}")           
+        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
                   	
@@ -272,7 +204,7 @@ def HRL(env, args, seed):
         if args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
-        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}")           
+        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
                   	
@@ -303,9 +235,9 @@ def HRL(env, args, seed):
         Agent_RL = SAC.SAC(**kwargs)
             
         if args.load_model and args.HIL and args.load_HIL_model:
-            Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")   
+            Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
-        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}")      
+        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
                   	
@@ -372,9 +304,9 @@ def HRL(env, args, seed):
         Agent_RL = TD3.TD3(**kwargs)
             
         if args.load_model and args.HIL and args.load_HIL_model:
-            Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")   
+            Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
-        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}/{args.policy}_HIL_True_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.coins}")      
+        	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
                   	
@@ -464,18 +396,19 @@ if __name__ == "__main__":
     
     HIL_ablation_study_results = load_obj('HIL_ablation_study/Sorted_results')
     Results_Best_HIL_and_HRL = load_obj('Results_Best_HIL_and_HRL')
-    Best_results_nOptions_1 = load_obj('HIL_ablation_study/Best_results_nOptions_1')
+    Best_results_nOptions_1_IL_only = load_obj('HIL_ablation_study/Best_results_nOptions_1')
+    Best_results_nOptions_1_IL_RL = load_obj('IL_RL_best_nOptions_1')
     
     parser = argparse.ArgumentParser()
     #General
-    parser.add_argument("--mode", default="HIL_HRL")     # number of options
+    parser.add_argument("--mode", default="HRL_ablation_study")     # number of options
     parser.add_argument("--number_options", default=1, type=int)     # number of options
-    parser.add_argument("--policy", default="TD3")                   # Policy name (TD3, DDPG or OurDDPG)
+    parser.add_argument("--policy", default="PPO")                   # Policy name (TD3, DDPG or OurDDPG)
     parser.add_argument("--seed", default=10, type=int)               # Sets Gym, PyTorch and Numpy seeds
     parser.add_argument("--env", default="Foraging")               # Sets Gym, PyTorch and Numpy seeds
     parser.add_argument("--number_steps_per_iter", default=30000, type=int) # Time steps initial random policy is used 25e3
     parser.add_argument("--eval_freq", default=1, type=int)          # How often (time steps) we evaluate
-    parser.add_argument("--max_iter", default=334, type=int)    # Max time steps to run environment
+    parser.add_argument("--max_iter", default=67, type=int)    # Max time steps to run environment
     parser.add_argument("--coins", default=2, type=int)
     #IL
     parser.add_argument("--HIL", action="store_true")          # Batch size for HIL
@@ -526,7 +459,7 @@ if __name__ == "__main__":
             print("---------------------------------------")
             
         if args.adv_reward:
-            file_name = f"{args.policy}_HIL_{args.HIL}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            file_name = f"{args.policy}_HIL_{args.HIL}_BOTH_HIL_HRL_ADV_Reward_{args.adv_reward}_{args.seed}"
             print("---------------------------------------")
             print("ADV_Reward")
             print("---------------------------------------") 
@@ -536,10 +469,13 @@ if __name__ == "__main__":
             args.load_HIL_model_expert_traj = HIL_ablation_study_results[f'Best_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}']['expert traj']
             args.coins = args.load_HIL_model_expert_traj
             
-            file_name = f"{args.policy}_HIL_{args.HIL}_traj_{args.load_HIL_model_expert_traj}_{args.seed}"
-            print("---------------------------------------")
-            print(f"Policy: {args.policy}, HIL: {args.HIL}, Human Traj: {args.load_HIL_model_expert_traj}, Env: {args.env}, Seed: {args.seed}")
-            print("---------------------------------------")
+            if args.adv_reward:
+                file_name = f"{args.policy}_HIL_{args.HIL}_ONLY_HIL_model_traj_{args.load_HIL_model_expert_traj}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            else:
+                file_name = f"{args.policy}_HIL_{args.HIL}_traj_{args.load_HIL_model_expert_traj}_{args.seed}"
+                print("---------------------------------------")
+                print(f"Policy: {args.policy}, HIL: {args.HIL}, Human Traj: {args.load_HIL_model_expert_traj}, Env: {args.env}, Seed: {args.seed}")
+                print("---------------------------------------")
             
         if not os.path.exists(f"./models/HRL/{file_name}"):
             os.makedirs(f"./models/HRL/{file_name}")
@@ -550,20 +486,29 @@ if __name__ == "__main__":
         
         if args.adv_reward:
             np.random.seed(0)
-            corner_1 = np.concatenate((np.random.randint(-100,-80, size=(60,1)), np.random.randint(80, 100, size=(60,1))), axis=1)
-            corner_2 = np.concatenate((np.random.randint(80,100, size=(60,1)), np.random.randint(-100, -80, size=(60,1))), axis=1)
-            coins_location = np.concatenate((np.random.randint(-100,-80, size=(60,2)), np.random.randint(-10,10, size=(60,2)), np.random.randint(80,100, size=(60,2)), corner_1, corner_2, np.array([[110,110]])), axis=0)
-            args.coins = Results_Best_HIL_and_HRL[f"nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}"]
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+            
+            args.load_HIL_model_seed = Results_Best_HIL_and_HRL[f"nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}"]
+            args.load_HIL_model_expert_traj = HIL_ablation_study_results[f'Best_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}']['expert traj']
+            
             env = World.Foraging.env(coins_location)
             
         if args.adv_reward and args.load_HIL_model:
             args.load_HIL_model_seed = HIL_ablation_study_results[f'Best_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}']['seed']
             args.load_HIL_model_expert_traj = HIL_ablation_study_results[f'Best_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}']['expert traj']
             args.coins = args.load_HIL_model_expert_traj
+            
             np.random.seed(0)
-            corner_1 = np.concatenate((np.random.randint(-100,-80, size=(60,1)), np.random.randint(80, 100, size=(60,1))), axis=1)
-            corner_2 = np.concatenate((np.random.randint(80,100, size=(60,1)), np.random.randint(-100, -80, size=(60,1))), axis=1)
-            coins_location = np.concatenate((np.random.randint(-100,-80, size=(60,2)), np.random.randint(-10,10, size=(60,2)), np.random.randint(80,100, size=(60,2)), corner_1, corner_2, np.array([[110,110]])), axis=0)
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+            
             env = World.Foraging.env(coins_location)
     
         evaluations, policy = train(env, args, args.seed)
@@ -596,20 +541,23 @@ if __name__ == "__main__":
             print("---------------------------------------")
             
         if args.adv_reward:
-            file_name = f"{args.policy}_HIL_{args.HIL}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            file_name = f"{args.policy}_HIL_{args.HIL}_BOTH_HIL_HRL_traj_{args.load_HIL_model_expert_traj}_ADV_Reward_{args.adv_reward}_{args.seed}"
             print("---------------------------------------")
             print("ADV_Reward")
             print("---------------------------------------")
                  
         if args.load_HIL_model:
-            args.load_HIL_model_seed = Best_results_nOptions_1[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
-            args.load_HIL_model_expert_traj = Best_results_nOptions_1[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
+            args.load_HIL_model_seed = Best_results_nOptions_1_IL_only[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
+            args.load_HIL_model_expert_traj = Best_results_nOptions_1_IL_only[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
             args.coins = args.load_HIL_model_expert_traj
             
-            file_name = f"{args.policy}_HIL_{args.HIL}_traj_{args.load_HIL_model_expert_traj}_{args.seed}"
-            print("---------------------------------------")
-            print(f"Policy: {args.policy}, HIL: {args.HIL}, Human Traj: {args.load_HIL_model_expert_traj}, Env: {args.env}, Seed: {args.seed}")
-            print("---------------------------------------")
+            if args.adv_reward:
+                file_name = f"{args.policy}_HIL_{args.HIL}_ONLY_HIL_model_traj_{args.load_HIL_model_expert_traj}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            else:
+                file_name = f"{args.policy}_HIL_{args.HIL}_traj_{args.load_HIL_model_expert_traj}_{args.seed}"
+                print("---------------------------------------")
+                print(f"Policy: {args.policy}, HIL: {args.HIL}, Human Traj: {args.load_HIL_model_expert_traj}, Env: {args.env}, Seed: {args.seed}")
+                print("---------------------------------------")
             
         if not os.path.exists(f"./models/HRL/{file_name}"):
             os.makedirs(f"./models/HRL/{file_name}")
@@ -620,20 +568,29 @@ if __name__ == "__main__":
         
         if args.adv_reward:
             np.random.seed(0)
-            corner_1 = np.concatenate((np.random.randint(-100,-80, size=(60,1)), np.random.randint(80, 100, size=(60,1))), axis=1)
-            corner_2 = np.concatenate((np.random.randint(80,100, size=(60,1)), np.random.randint(-100, -80, size=(60,1))), axis=1)
-            coins_location = np.concatenate((np.random.randint(-100,-80, size=(60,2)), np.random.randint(-10,10, size=(60,2)), np.random.randint(80,100, size=(60,2)), corner_1, corner_2, np.array([[110,110]])), axis=0)
-            args.coins = Results_Best_HIL_and_HRL[f"nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}"]
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+            
+            args.load_HIL_model_seed = Best_results_nOptions_1_IL_RL[f'IL_RL_traj_{args.load_HIL_model_expert_traj}']['best_seed']
+            args.load_HIL_model_expert_traj = Best_results_nOptions_1_IL_RL[f'IL_RL_traj_{args.load_HIL_model_expert_traj}']['traj']
+
             env = World.Foraging.env(coins_location)
             
         if args.adv_reward and args.load_HIL_model:
-            args.load_HIL_model_seed = Best_results_nOptions_1[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
-            args.load_HIL_model_expert_traj = Best_results_nOptions_1[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
+            args.load_HIL_model_seed = Best_results_nOptions_1_IL_only[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
+            args.load_HIL_model_expert_traj = Best_results_nOptions_1_IL_only[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
             args.coins = args.load_HIL_model_expert_traj
+            
             np.random.seed(0)
-            corner_1 = np.concatenate((np.random.randint(-100,-80, size=(60,1)), np.random.randint(80, 100, size=(60,1))), axis=1)
-            corner_2 = np.concatenate((np.random.randint(80,100, size=(60,1)), np.random.randint(-100, -80, size=(60,1))), axis=1)
-            coins_location = np.concatenate((np.random.randint(-100,-80, size=(60,2)), np.random.randint(-10,10, size=(60,2)), np.random.randint(80,100, size=(60,2)), corner_1, corner_2, np.array([[110,110]])), axis=0)
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+            
             env = World.Foraging.env(coins_location)
     
         evaluations, policy = train(env, args, args.seed)
