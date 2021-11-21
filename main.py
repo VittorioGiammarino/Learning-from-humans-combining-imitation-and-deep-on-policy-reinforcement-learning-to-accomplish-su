@@ -627,8 +627,8 @@ if __name__ == "__main__":
             env = World.Foraging.env(coins_location)
             
         if args.adv_reward and args.load_HIL_model:
-            args.load_HIL_model_seed = HIL_ablation_study_results[f'Best_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}']['seed']
-            args.load_HIL_model_expert_traj = HIL_ablation_study_results[f'Best_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}']['expert traj']
+            args.load_HIL_model_seed = Best_results_nOptions_1[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
+            args.load_HIL_model_expert_traj = Best_results_nOptions_1[f'HIL_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
             args.coins = args.load_HIL_model_expert_traj
             np.random.seed(0)
             corner_1 = np.concatenate((np.random.randint(-100,-80, size=(60,1)), np.random.randint(80, 100, size=(60,1))), axis=1)
