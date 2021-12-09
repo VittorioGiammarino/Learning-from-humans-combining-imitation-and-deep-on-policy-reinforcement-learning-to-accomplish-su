@@ -359,6 +359,27 @@ plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat.pdf', format='pdf', bbo
 plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat.jpg', format='jpg', bbox_inches='tight')
 plt.show()
 
+# %%
+HIL_ablation_study_results = load_obj('results/HIL_ablation_study/Sorted_results')
+success = 0
+
+for i in range(50):
+    
+    HIL_nOptions_1_supervised_False = []
+    
+    for j in range(8):
+        HIL_nOptions_1_supervised_False.append(HIL_ablation_study_results[f'HIL_Expert_traj_{coins_array[i]}'][f'HIL_traj_{coins_array[i]}_nOptions_1_supervised_False_{j}'])
+            
+    HIL_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_nOptions_1_supervised_False),0)
+    HIL_nOptions_1_supervised_False_std = np.std(np.array(HIL_nOptions_1_supervised_False),0)
+    
+    if HIL_nOptions_1_supervised_False_mean[-1]/325 > 0.4:
+        success+=1
+        
+print(success/50)
+
+
+
 # %% analysis on which RL algorithm works better
 
 PPO_IL = []
@@ -435,9 +456,9 @@ for k,ax_row in enumerate(ax_array):
                
         axes.plot(steps, PPO_HIL_mean, label='PPO', c=clrs[0])
         axes.fill_between(steps, PPO_HIL_mean-PPO_HIL_std, PPO_HIL_mean+PPO_HIL_std, alpha=0.2, facecolor=clrs[0])
-        axes.plot(steps, TRPO_no_entropy_HIL_mean, label='TRPO no entropy', c=clrs[2])
+        axes.plot(steps, TRPO_no_entropy_HIL_mean, label='TRPO', c=clrs[2])
         axes.fill_between(steps, TRPO_no_entropy_HIL_mean-TRPO_no_entropy_HIL_std, TRPO_no_entropy_HIL_mean+TRPO_no_entropy_HIL_std, alpha=0.2, facecolor=clrs[2])
-        axes.plot(steps, UATRPO_no_entropy_HIL_mean, label='UATRPO no entropy', c=clrs[4])
+        axes.plot(steps, UATRPO_no_entropy_HIL_mean, label='UATRPO', c=clrs[4])
         axes.fill_between(steps, UATRPO_no_entropy_HIL_mean-UATRPO_no_entropy_HIL_std, UATRPO_no_entropy_HIL_mean+UATRPO_no_entropy_HIL_std, alpha=0.2, facecolor=clrs[4])
         axes.plot(steps, TD3_HIL_mean, label='TD3', c=clrs[1])
         axes.fill_between(steps, TD3_HIL_mean-TD3_HIL_std, TD3_HIL_mean+TD3_HIL_std, alpha=0.2, facecolor=clrs[1])
@@ -478,18 +499,35 @@ coins_array = range(50)
 PPO_RL_AllHumans = [[[] for i in range(8)] for coin in coins_array]
 
 j=0
+success=0
 for human in coins_array:
     for i in range(8):
         with open(f'results/HRL/evaluation_PPO_HIL_True_traj_{human}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
             PPO_RL_AllHumans[j][i] = np.load(f, allow_pickle=True)
             
+            
     j+=1
 
 PPO_RL_mean = []
 PPO_RL_std = []
+success=0
 for j in range(len(coins_array)):
     PPO_RL_mean.append(np.mean(np.array(PPO_RL_AllHumans[j]),0))
     PPO_RL_std.append(np.std(np.array(PPO_RL_AllHumans[j]),0))
+    
+    if PPO_RL_mean[j][-1]/325>0.85:
+        success+=1
+        
+print(success/50)
+
+success = 0
+
+for i in range(len(Real_Reward_eval_human)):
+    
+    if Real_Reward_eval_human[i]/325>0.85:
+        success+=1
+        
+print(success/50)
     
 # %% HRL PPO study only Options 1 and some selected trajectories
     
@@ -639,3 +677,221 @@ plt.plot(0.1*coins_location_adv[:,0], 0.1*coins_location_adv[:,1], 'xb')
 plt.axis('off')
 plt.savefig('Figures/Environment_top_view_ADV.pdf', bbox_inches='tight', format='pdf')  
 plt.show()  
+
+# %% HIL only PPO Adversarial-Reward
+
+coins_array = range(50)
+max_number_coins = 325
+
+PPO_IL_only_Adversarial = [[[] for i in range(8)] for coin in coins_array]
+
+j=0
+for human in coins_array:
+    for i in range(8):
+        with open(f'results/HRL/evaluation_PPO_HIL_True_ONLY_HIL_model_traj_{human}_ADV_Reward_True_{i}.npy', 'rb') as f:
+            PPO_IL_only_Adversarial[j][i] = np.load(f, allow_pickle=True)/max_number_coins
+            
+    j+=1
+
+PPO_IL_only_Adversarial_mean = []
+PPO_IL_only_Adversarial_std = []
+success=0
+for j in range(len(coins_array)):
+    PPO_IL_only_Adversarial_mean.append(np.mean(np.array(PPO_IL_only_Adversarial[j]),0))
+    PPO_IL_only_Adversarial_std.append(np.std(np.array(PPO_IL_only_Adversarial[j]),0))
+    
+    if PPO_IL_only_Adversarial_mean[j][-1]>0.9:
+        success+=1
+        
+print((success/50)*100)
+    
+# %% HRL PPO study only Options 1 and some selected trajectories
+    
+steps = np.linspace(0,2.01e6,len(PPO_IL_only_Adversarial_mean[0]))
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()    
+threshold = np.mean(Real_Reward_eval_human)
+Human_average_performance = threshold*np.ones((len(steps),))
+
+coins_array = [9, 10, 13, 40, 43]
+
+clrs = sns.color_palette("husl", 10)
+
+columns = 5
+rows = 1
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(20,5))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+        
+        axes.plot(steps, PPO_IL_only_Adversarial_mean[coins_array[i]], label=f'PPO + IL-only', c=clrs[1])
+        axes.fill_between(steps, PPO_IL_only_Adversarial_mean[coins_array[i]]-PPO_IL_only_Adversarial_std[coins_array[i]], PPO_IL_only_Adversarial_mean[coins_array[i]]+PPO_IL_only_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
+        
+        Original = np.ones((len(steps),))
+
+        axes.plot(steps, Original, "-.", label='MAX Reward', c=clrs[7])
+        
+        axes.set_ylim([0, 1.1])
+        axes.set_xlabel('Steps')
+        if i == 0:
+            axes.set_ylabel('Reward')
+            
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+        
+        i+=1
+
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_some_experts.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_some_experts.jpg', format='jpg', bbox_inches='tight')
+
+# %% HRL PPO study only Options 1 and all the trajectories
+
+Reward_eval_human = np.load("./Expert_data/Reward_eval_human.npy")
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()
+Processing_difference = Real_Reward_eval_human - Reward_eval_human 
+
+coins_array = range(50)
+
+# selected by inspection considering: (i) human performance, (ii) at least a trajectory from each subject, (iii) not too many lost info in the preprocessing step
+
+columns = 5
+rows = 10
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(25,45))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+
+        axes.plot(steps, PPO_IL_only_Adversarial_mean[coins_array[i]], label='PPO + IL-only', c=clrs[1])
+        axes.fill_between(steps, PPO_IL_only_Adversarial_mean[coins_array[i]]-PPO_IL_only_Adversarial_std[coins_array[i]], PPO_IL_only_Adversarial_mean[coins_array[i]]+PPO_IL_only_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
+        
+        Original = np.ones((len(steps),))
+
+        axes.plot(steps, Original, "-.", label='MAX Reward', c=clrs[7])
+        
+        axes.set_ylim([0, 1.1])
+        
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+        
+        i+=1
+
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_all_experts.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_all_experts.jpg', format='jpg', bbox_inches='tight')
+plt.show()
+
+# %% HIL+HRL PPO Adversarial-Reward
+
+coins_array = range(50)
+max_number_coins = 325
+
+PPO_IL_RL_Adversarial = [[[] for i in range(8)] for coin in coins_array]
+
+j=0
+for human in coins_array:
+    for i in range(8):
+        with open(f'results/HRL/evaluation_PPO_HIL_False_BOTH_HIL_HRL_traj_{human}_ADV_Reward_True_{i}.npy', 'rb') as f:
+            PPO_IL_RL_Adversarial[j][i] = np.load(f, allow_pickle=True)/max_number_coins
+            
+    j+=1
+
+PPO_IL_RL_Adversarial_mean = []
+PPO_IL_RL_Adversarial_std = []
+success=0
+for j in range(len(coins_array)):
+    PPO_IL_RL_Adversarial_mean.append(np.mean(np.array(PPO_IL_RL_Adversarial[j]),0))
+    PPO_IL_RL_Adversarial_std.append(np.std(np.array(PPO_IL_RL_Adversarial[j]),0))
+    
+    if PPO_IL_RL_Adversarial_mean[j][-1]>0.8:
+        success+=1
+        
+print((success/50)*100)
+
+# %% HRL PPO study only Options 1 and some selected trajectories
+    
+steps = np.linspace(0,2.01e6,len(PPO_IL_RL_Adversarial_mean[0]))
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()    
+threshold = np.mean(Real_Reward_eval_human)
+Human_average_performance = threshold*np.ones((len(steps),))
+
+coins_array = [9, 10, 13, 40, 43]
+
+clrs = sns.color_palette("husl", 10)
+
+columns = 5
+rows = 1
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(20,5))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+        
+        axes.plot(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]], label='PPO + RL-IL', c=clrs[1])
+        axes.fill_between(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]]-PPO_IL_RL_Adversarial_std[coins_array[i]], PPO_IL_RL_Adversarial_mean[coins_array[i]]+PPO_IL_RL_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
+        
+        Original = np.ones((len(steps),))
+
+        axes.plot(steps, Original, "-.", label='MAX Reward', c=clrs[7])
+        
+        axes.set_ylim([0, 1.1])
+        axes.set_xlabel('Steps')
+        if i == 0:
+            axes.set_ylabel('Reward')
+            
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+        
+        i+=1
+
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_some_experts.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_some_experts.jpg', format='jpg', bbox_inches='tight')
+
+# %% HRL PPO study only Options 1 and all the trajectories
+
+Reward_eval_human = np.load("./Expert_data/Reward_eval_human.npy")
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()
+Processing_difference = Real_Reward_eval_human - Reward_eval_human 
+
+coins_array = range(50)
+
+# selected by inspection considering: (i) human performance, (ii) at least a trajectory from each subject, (iii) not too many lost info in the preprocessing step
+
+columns = 5
+rows = 10
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(25,45))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+
+        axes.plot(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]], label='PPO + RL-IL', c=clrs[1])
+        axes.fill_between(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]]-PPO_IL_RL_Adversarial_std[coins_array[i]], PPO_IL_RL_Adversarial_mean[coins_array[i]]+PPO_IL_RL_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
+        
+        Original = np.ones((len(steps),))
+
+        axes.plot(steps, Original, "-.", label='MAX Reward', c=clrs[7])
+        
+        axes.set_ylim([0, 1.1])
+        
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+        
+        i+=1
+
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_all_experts.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_all_experts.jpg', format='jpg', bbox_inches='tight')
+plt.show()
+
+# %%
+
+success = 0
+
+for i in range(len(Real_Reward_eval_human)):
+    
+    if Real_Reward_eval_human[i]/325>0.9:
+        success+=1
+        
+print(success/50)
+
+
+    

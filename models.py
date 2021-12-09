@@ -53,6 +53,86 @@ class SoftmaxHierarchicalActor:
             log_prob_sampled = log_prob[torch.arange(len(action)), action]
             
             return log_prob, log_prob_sampled.reshape(-1,1)
+        
+    class NN_PI_B(nn.Module):
+        def __init__(self, state_dim, termination_dim):
+            super(SoftmaxHierarchicalActor.NN_PI_B, self).__init__()
+            
+            self.l1 = nn.Linear(state_dim,10)
+            # nn.init.uniform_(self.l1.weight, -0.5, 0.5)
+            self.l2 = nn.Linear(10,10)
+            self.l3 = nn.Linear(10,termination_dim)
+            # nn.init.uniform_(self.l2.weight, -0.5, 0.5)
+            self.lS = nn.Softmax(dim=1)
+            
+        def forward(self, state):
+            b = self.l1(state)
+            b = F.relu(self.l2(b))
+            return self.lS(self.l3(b))            
+        
+        def sample(self, state):
+            self.log_Soft = nn.LogSoftmax(dim=1)
+            b = self.l1(state)
+            b = F.relu(self.l2(b))
+            log_prob = self.log_Soft(self.l3(b) + 1e-6) 
+            
+            prob = self.forward(state)
+            m = Categorical(prob)
+            termination = m.sample()
+            
+            log_prob_sampled = log_prob[torch.arange(len(termination)), termination]
+            
+            return termination, log_prob_sampled.reshape(-1,1)
+        
+        def sample_log(self, state, termination):
+            self.log_Soft = nn.LogSoftmax(dim=1)
+            b = self.l1(state)
+            b = F.relu(self.l2(b))
+            log_prob = self.log_Soft(self.l3(b) + 1e-6) 
+                        
+            log_prob_sampled = log_prob[torch.arange(len(termination)), termination]
+            
+            return log_prob, log_prob_sampled.reshape(-1,1)
+        
+    class NN_PI_HI(nn.Module):
+        def __init__(self, state_dim, option_dim):
+            super(SoftmaxHierarchicalActor.NN_PI_HI, self).__init__()
+            
+            self.l1 = nn.Linear(state_dim,5)
+            # nn.init.uniform_(self.l1.weight, -0.5, 0.5)
+            self.l2 = nn.Linear(5,5)
+            self.l3 = nn.Linear(5,option_dim)
+            # nn.init.uniform_(self.l2.weight, -0.5, 0.5)
+            self.lS = nn.Softmax(dim=1)
+
+        def forward(self, state):
+            o = self.l1(state)
+            o = F.relu(self.l2(o))
+            return self.lS(self.l3(o))
+        
+        def sample(self, state):
+            self.log_Soft = nn.LogSoftmax(dim=1)
+            o = self.l1(state)
+            o = F.relu(self.l2(o))
+            log_prob = self.log_Soft(self.l3(o) + 1e-6) 
+            
+            prob = self.forward(state)
+            m = Categorical(prob)
+            option = m.sample()
+            
+            log_prob_sampled = log_prob[torch.arange(len(option)), option]
+            
+            return option, log_prob_sampled.reshape(-1,1)
+        
+        def sample_log(self, state, option):
+            self.log_Soft = nn.LogSoftmax(dim=1)
+            o = self.l1(state)
+            o = F.relu(self.l2(o))
+            log_prob = self.log_Soft(self.l3(o) + 1e-6) 
+                        
+            log_prob_sampled = log_prob[torch.arange(len(option)), option]
+            
+            return log_prob, log_prob_sampled.reshape(-1,1)
             
 class Critic_flat_discrete(nn.Module):
     def __init__(self, state_dim, action_cardinality):

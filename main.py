@@ -39,6 +39,13 @@ def HIL(env, args, seed):
     print(f"HIL: {args.HIL}, Traj: {args.coins}, nOptions: {args.number_options}, Supervised: {args.pi_hi_supervised}, Seed: {args.seed}")
     print("---------------------------------------")
     
+    if args.mode == "HIL_ablation_study_allocentric_only":
+        for i in range(len(Trajectories)):
+            for j in range(len(Trajectories[i])):
+                Trajectories[i][j,2] = 0
+                Trajectories[i][j,3] = 0
+        
+    
     TrainingSet = Trajectories[args.coins]
     Labels = Rotation[args.coins]
    
@@ -94,11 +101,10 @@ def HIL(env, args, seed):
         Loss = loss
         avg_reward = evaluate_H(seed, Agent_BatchHIL_torch, env, args.evaluation_max_n_steps, args.evaluation_episodes, 'standard', TrainingSet[0,:])
         evaluation_HIL.append(avg_reward)
-        
-    # Save
-    np.save(f"./results/HRL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}", evaluation_HIL)
-    
+            
     if args.mode == "HIL_HRL":
+        
+        np.save(f"./results/HRL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}", evaluation_HIL)
     
         if not os.path.exists(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}"):
             os.makedirs(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}")
@@ -107,12 +113,23 @@ def HIL(env, args, seed):
         
     elif args.mode == "HIL_ablation_study":
         
+        np.save(f"./results/HRL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}", evaluation_HIL)
+        
         if not os.path.exists(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}"):
             os.makedirs(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}")
         
         Agent_BatchHIL_torch.save(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL")
+        
+    elif args.mode == "HIL_ablation_study_allocentric_only":
+        
+        np.save(f"./results/HRL/HIL_allocentric_only_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}", evaluation_HIL)
+        
+        if not os.path.exists(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}"):
+            os.makedirs(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}")
+        
+        Agent_BatchHIL_torch.save(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL")
     
-    
+
 def HRL(env, args, seed):
     
     Trajectories = np.load("./Expert_data/Trajectories.npy", allow_pickle=True).tolist()
@@ -401,7 +418,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     #General
-    parser.add_argument("--mode", default="HRL_ablation_study")     # number of options
+    parser.add_argument("--mode", default="HIL_ablation_study_allocentric_only")     # number of options
     parser.add_argument("--number_options", default=1, type=int)     # number of options
     parser.add_argument("--policy", default="PPO")                   # Policy name (TD3, DDPG or OurDDPG)
     parser.add_argument("--seed", default=10, type=int)               # Sets Gym, PyTorch and Numpy seeds
@@ -635,6 +652,42 @@ if __name__ == "__main__":
                     np.random.seed(args.seed)
                     
                     HIL(env, args, args.seed)
+                    
+    elif args.mode == "HIL_ablation_study_allocentric_only":
+        
+        print("---------------------------------------")
+        print("HIL ablation study allocentric only")
+        print("---------------------------------------")
+        
+        args.HIL = True
+        
+        for i in range(len(Trajectories)):
+            for j in range(len(Trajectories[i])):
+                Trajectories[i][j,2] = 0
+                Trajectories[i][j,3] = 0
+        
+        if not os.path.exists("./results/HRL"):
+            os.makedirs("./results/HRL")
+                   
+        if not os.path.exists("./models/HIL_ablation_study_allocentric_only"):
+            os.makedirs("./models//HIL_ablation_study_allocentric_only")
+        
+        for traj in range(len(Trajectories)):
+        
+            args.number_options = 1
+            args.pi_hi_supervised = False
+            
+            args.coins = traj
+            coins_distribution = args.coins  
+            coins_location = Coins_location[coins_distribution,:,:] 
+            env = World.Foraging.env_allocentric_only(coins_location)
+            
+            # Set seeds
+            env.Seed(args.seed)
+            torch.manual_seed(args.seed)
+            np.random.seed(args.seed)
+            
+            HIL(env, args, args.seed)
                     
                     
                 
