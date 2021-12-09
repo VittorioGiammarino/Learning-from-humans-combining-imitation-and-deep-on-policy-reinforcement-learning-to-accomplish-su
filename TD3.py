@@ -13,7 +13,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     
 class TD3(object):
-    def __init__(self, state_dim, action_dim, encoding_info = None, l_rate=3e-4, discount=0.99, tau=0.005, alpha=0.2, policy_noise=0.2, 
+    def __init__(self, state_dim, action_dim, encoding_info = None, l_rate=3e-4, discount=0.99, tau=0.005, policy_noise=0.2, 
                  noise_clip=0.5, policy_freq=2):
 
         self.actor = SoftmaxHierarchicalActor.NN_PI_LO(state_dim, action_dim).to(device)
