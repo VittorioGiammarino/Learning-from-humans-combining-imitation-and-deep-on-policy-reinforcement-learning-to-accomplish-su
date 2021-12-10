@@ -134,6 +134,13 @@ def HRL(env, args, seed):
     
     Trajectories = np.load("./Expert_data/Trajectories.npy", allow_pickle=True).tolist()
     Rotation = np.load("./Expert_data/Rotation.npy", allow_pickle=True).tolist()
+    
+    if args.mode == "HRL_ablation_study_allocentric_only":
+        for i in range(len(Trajectories)):
+            for j in range(len(Trajectories[i])):
+                Trajectories[i][j,2] = 0
+                Trajectories[i][j,3] = 0    
+    
     TrainingSet = Trajectories[args.coins]
     Labels = Rotation[args.coins]
     state_samples, action_samples, encoding_info = Encode_Data(TrainingSet, Labels)
@@ -150,13 +157,15 @@ def HRL(env, args, seed):
 
         Agent_RL = PPO.PPO(**kwargs)
         
-        if args.load_model and args.HIL and args.load_HIL_model:
+        if args.mode == "HRL_ablation_study_allocentric_only":
+            Agent_RL.load_actor(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")
+        elif args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
         	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
-                  	
+                        	
         # Evaluate untrained policy
         evaluation_RL = []
         avg_reward = eval_policy(seed, Agent_RL, env, args.evaluation_max_n_steps, args.evaluation_episodes, 'standard', TrainingSet[0,:])
@@ -184,12 +193,15 @@ def HRL(env, args, seed):
 
         Agent_RL = TRPO.TRPO(**kwargs)
         
-        if args.load_model and args.HIL and args.load_HIL_model:
+        if args.mode == "HRL_ablation_study_allocentric_only":
+            Agent_RL.load_actor(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")
+        elif args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
         	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
+            
                   	
         # Evaluate untrained policy
         evaluation_RL = []
@@ -218,7 +230,9 @@ def HRL(env, args, seed):
 
         Agent_RL = UATRPO.UATRPO(**kwargs)
         
-        if args.load_model and args.HIL and args.load_HIL_model:
+        if args.mode == "HRL_ablation_study_allocentric_only":
+            Agent_RL.load_actor(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")
+        elif args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
         	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
@@ -251,7 +265,9 @@ def HRL(env, args, seed):
 
         Agent_RL = SAC.SAC(**kwargs)
             
-        if args.load_model and args.HIL and args.load_HIL_model:
+        if args.mode == "HRL_ablation_study_allocentric_only":
+            Agent_RL.load_actor(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")
+        elif args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
         	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
@@ -320,7 +336,9 @@ def HRL(env, args, seed):
 
         Agent_RL = TD3.TD3(**kwargs)
             
-        if args.load_model and args.HIL and args.load_HIL_model:
+        if args.mode == "HRL_ablation_study_allocentric_only":
+            Agent_RL.load_actor(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL") 
+        elif args.load_model and args.HIL and args.load_HIL_model:
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
         	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
@@ -413,12 +431,16 @@ if __name__ == "__main__":
     
     HIL_ablation_study_results = load_obj('HIL_ablation_study/Sorted_results')
     Results_Best_HIL_and_HRL = load_obj('Results_Best_HIL_and_HRL')
+    
     Best_results_nOptions_1_IL_only = load_obj('HIL_ablation_study/Best_results_nOptions_1')
     Best_results_nOptions_1_IL_RL = load_obj('IL_RL_best_nOptions_1')
     
+    Best_results_allocentric_only_nOptions_1_IL_only = load_obj('HIL_ablation_study/Best_results_allocentric_only_nOptions_1')
+    # Best_results_allocentric_only_nOptions_1_IL_RL = load_obj('IL_RL_best_allocentric_only_nOptions_1')
+    
     parser = argparse.ArgumentParser()
     #General
-    parser.add_argument("--mode", default="HIL_ablation_study_allocentric_only")     # number of options
+    parser.add_argument("--mode", default="HRL_ablation_study_allocentric_only")     # number of options
     parser.add_argument("--number_options", default=1, type=int)     # number of options
     parser.add_argument("--policy", default="PPO")                   # Policy name (TD3, DDPG or OurDDPG)
     parser.add_argument("--seed", default=10, type=int)               # Sets Gym, PyTorch and Numpy seeds
@@ -689,7 +711,90 @@ if __name__ == "__main__":
             
             HIL(env, args, args.seed)
                     
-                    
+    elif args.mode == "HRL_ablation_study_allocentric_only":
+        
+        file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_{args.seed}"
+        print("---------------------------------------")
+        print(f"Allocentric ONLY, Policy: {args.policy}, HIL: {args.HIL}, Env: {args.env}, Seed: {args.seed}")
+        print("---------------------------------------")
+        
+        for i in range(len(Trajectories)):
+            for j in range(len(Trajectories[i])):
+                Trajectories[i][j,2] = 0
+                Trajectories[i][j,3] = 0
+               
+        if not os.path.exists("./results/HRL"):
+            os.makedirs("./results/HRL")
+                               
+        if args.policy == "PPO" or args.policy == "SAC" or args.policy == "TRPO" or args.policy == "UATRPO" or args.policy == "TD3":
+            args.number_options = 1
+            args.pi_hi_supervised = False
+            
+            file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_{args.seed}"
+            print("---------------------------------------")
+            print(f"Allocentric ONLY, Policy: {args.policy}, HIL: {args.HIL}, Env: {args.env}, Seed: {args.seed}")
+            print("---------------------------------------")
+            
+        if args.adv_reward:
+            file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_BOTH_HIL_HRL_traj_{args.load_HIL_model_expert_traj}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            print("---------------------------------------")
+            print("ADV_Reward")
+            print("---------------------------------------")
+                 
+        if args.load_HIL_model:
+            args.load_HIL_model_seed = Best_results_allocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
+            args.load_HIL_model_expert_traj = Best_results_allocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
+            args.coins = args.load_HIL_model_expert_traj
+            
+            if args.adv_reward:
+                file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_ONLY_HIL_model_traj_{args.load_HIL_model_expert_traj}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            else:
+                file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_traj_{args.load_HIL_model_expert_traj}_{args.seed}"
+                print("---------------------------------------")
+                print(f"Allocentric ONLY, Policy: {args.policy}, HIL: {args.HIL}, Human Traj: {args.load_HIL_model_expert_traj}, Env: {args.env}, Seed: {args.seed}")
+                print("---------------------------------------")
+            
+        if not os.path.exists(f"./models/HRL/{file_name}"):
+            os.makedirs(f"./models/HRL/{file_name}")
+         
+        coins_distribution = args.coins    
+        coins_location = Coins_location[coins_distribution,:,:] 
+        env = World.Foraging.env_allocentric_only(coins_location)
+        
+        if args.adv_reward:
+            np.random.seed(0)
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+            
+            # args.load_HIL_model_seed = Best_results_allocentric_only_nOptions_1_IL_RL[f'IL_RL_allocentric_only_traj_{args.load_HIL_model_expert_traj}']['best_seed']
+            # args.load_HIL_model_expert_traj = Best_results_allocentric_only_nOptions_1_IL_RL[f'IL_RL_allocentric_only_traj_{args.load_HIL_model_expert_traj}']['traj']
+
+            env = World.Foraging.env_allocentric_only(coins_location)
+            
+        if args.adv_reward and args.load_HIL_model:
+            args.load_HIL_model_seed = Best_results_allocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
+            args.load_HIL_model_expert_traj = Best_results_allocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
+            args.coins = args.load_HIL_model_expert_traj
+            
+            np.random.seed(0)
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+            
+            env = World.Foraging.env_allocentric_only(coins_location)
+    
+        evaluations, policy = train(env, args, args.seed)
+        
+        if args.save_model: 
+            np.save(f"./results/HRL/evaluation_{file_name}", evaluations)
+            policy.save_actor(f"./models/HRL/{file_name}/{file_name}")
+            policy.save_critic(f"./models/HRL/{file_name}/{file_name}")
+                            
                 
                 
                 

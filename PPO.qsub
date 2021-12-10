@@ -16,6 +16,6 @@
 module load python3/3.8.10
 module load pytorch/1.9.0
 
-python main.py --number_options 1 --policy PPO --seed $1 --HIL --load_HIL_model --load_HIL_model_expert_traj $2
+python main.py --mode HRL_ablation_study_allocentric_only --policy PPO --seed $1 --HIL --load_HIL_model --load_HIL_model_expert_traj $2
 
 

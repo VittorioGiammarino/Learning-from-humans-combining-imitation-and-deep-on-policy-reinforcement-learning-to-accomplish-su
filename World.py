@@ -678,7 +678,7 @@ class Foraging:
             return state_plus1, r, done, False
         
     class env_allocentric_only:
-        def __init__(self,  coins_location = coins_location_standard, init_state = np.array([0,0,0,8]), version = 'complete', max_episode_steps = 3000):
+        def __init__(self,  coins_location = coins_location_standard, init_state = np.array([0,0,0,0]), version = 'complete', max_episode_steps = 3000):
             self.state = init_state
             self.version = version
             self.coin_initial = 0.1*coins_location
@@ -696,14 +696,14 @@ class Foraging:
             self.seed = seed
             np.random.seed(self.seed)
                 
-        def reset(self, version = 'standard', init_state = np.array([0,0,0,8])):
+        def reset(self, version = 'standard', init_state = np.array([0,0,0,0])):
             if version == 'standard':
                 self.state = init_state
                 self.coin_location = self.coin_initial
                 self.step_counter = 0
             else:
                 state = 0.1*np.random.randint(-100,100,2)
-                init_state = np.concatenate((state, np.array([0,8])))
+                init_state = np.concatenate((state, np.array([0,0])))
                 self.state = init_state
                 self.coin_location = self.coin_initial
                 self.step_counter = 0

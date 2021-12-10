@@ -699,6 +699,56 @@ for human in coins_array:
     j+=1
 
 save_obj(IL_RL_best_nOptions_1, 'IL_RL_best_nOptions_1')
+
+# %% Allocentric only
+
+HIL_allocentric_only_best_nOptions_1 = {}
+
+for trj in coins_array:
+    HIL_allocentric_only_nOptions_1_supervised_False = []
+    HIL_allocentric_only_best_nOptions_1_traj = {}
+    
+    HIL_allocentric_only_best_nOptions_1[f'HIL_allocentric_only_traj_{trj}_nOptions_1_supervised_False'] = HIL_allocentric_only_best_nOptions_1_traj
+    
+    for i in range(8):        
+        with open(f'results/HRL/HIL_allocentric_only_traj_{trj}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+            HIL_allocentric_only_nOptions_1_supervised_False.append(np.load(f, allow_pickle=True))
+    
+    reward_array = np.array(HIL_allocentric_only_nOptions_1_supervised_False)
+    
+    best_seed = np.argmax(reward_array[:,-1])
+    
+    HIL_allocentric_only_best_nOptions_1[f'HIL_allocentric_only_traj_{trj}_nOptions_1_supervised_False']['best_seed'] = best_seed
+    HIL_allocentric_only_best_nOptions_1[f'HIL_allocentric_only_traj_{trj}_nOptions_1_supervised_False']['traj'] = trj
+    
+
+save_obj(HIL_allocentric_only_best_nOptions_1, 'HIL_ablation_study/Best_results_allocentric_only_nOptions_1')
+# %% Allocentric only
+
+IL_RL_allocentric_only_best_nOptions_1 = {}
+
+coins_array = range(50)
+
+PPO_RL_allocentric_only_AllHumans = [[[] for i in range(8)] for coin in coins_array]
+
+j=0
+for human in coins_array:
+    IL_RL_allocentric_only_best_nOptions_1_traj = {}
+    IL_RL_allocentric_only_best_nOptions_1[f'IL_RL_allocentric_only_traj_{human}'] = IL_RL_allocentric_only_best_nOptions_1_traj
+    
+    for i in range(8):
+        with open(f'results/HRL/evaluation_PPO_allocentric_only_HIL_True_traj_{human}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+            PPO_RL_allocentric_only_AllHumans[j][i] = np.load(f, allow_pickle=True)
+            
+    reward_array = np.array(PPO_RL_allocentric_only_AllHumans[j])
+    best_seed = np.argmax(reward_array[:,-1])
+    
+    IL_RL_allocentric_only_best_nOptions_1[f'IL_RL_allocentric_only_traj_{human}']['best_seed'] = best_seed
+    IL_RL_allocentric_only_best_nOptions_1[f'IL_RL_allocentric_only_traj_{human}']['traj'] = human
+            
+    j+=1
+
+save_obj(IL_RL_best_nOptions_1, 'IL_RL_allocentric_only_best_nOptions_1')
 # %%
 
 def save_obj(obj, name):
