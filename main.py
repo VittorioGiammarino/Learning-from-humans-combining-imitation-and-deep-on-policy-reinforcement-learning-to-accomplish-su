@@ -447,7 +447,7 @@ if __name__ == "__main__":
     parser.add_argument("--env", default="Foraging")               # Sets Gym, PyTorch and Numpy seeds
     parser.add_argument("--number_steps_per_iter", default=30000, type=int) # Time steps initial random policy is used 25e3
     parser.add_argument("--eval_freq", default=1, type=int)          # How often (time steps) we evaluate
-    parser.add_argument("--max_iter", default=67, type=int)    # Max time steps to run environment
+    parser.add_argument("--max_iter", default=334, type=int)    # Max time steps to run environment
     parser.add_argument("--coins", default=2, type=int)
     #IL
     parser.add_argument("--HIL", action="store_true")          # Batch size for HIL

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-for job in $(seq 143289 143619):
+for job in $(seq 1312797 1312812):
 do
 qdel $job
 done 
-done
