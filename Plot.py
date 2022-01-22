@@ -882,7 +882,7 @@ plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_all_experts.pdf', format='p
 plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_all_experts.jpg', format='jpg', bbox_inches='tight')
 plt.show()
 
-# %%
+# %% Humans
 
 success = 0
 
@@ -893,5 +893,307 @@ for i in range(len(Real_Reward_eval_human)):
         
 print(success/50)
 
+# %% HIL ablation study only Options 1 and some selected trajectories ALLOCENTRIC ONLY
+Reward_eval_human = np.load("./Expert_data/Reward_eval_human.npy")
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()
+Processing_difference = Real_Reward_eval_human - Reward_eval_human 
 
+coins_array = [9, 10, 13, 40, 43]
+
+# selected by inspection considering: (i) human performance, (ii) at least a trajectory from each subject, (iii) not too many lost info in the preprocessing step
+
+coins_array = range(50)
+
+HIL_allocentric_AllHumans = [[[] for i in range(8)] for coin in coins_array]
+
+for human in coins_array:
+    for i in range(8):
+        with open(f'results/HRL/HIL_allocentric_only_traj_{human}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+            HIL_allocentric_AllHumans[human][i] = np.load(f, allow_pickle=True)
+            
+clrs = sns.color_palette("husl", 10)
+
+HIL_ablation_study_results = load_obj('results/HIL_ablation_study/Sorted_results')
+
+#%%
+
+coins_array = [9, 10, 13, 40, 43]
+columns = 5
+rows = 1
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(20,5))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+
+        HIL_nOptions_1_supervised_False = []
+        
+        for j in range(8):
+            HIL_nOptions_1_supervised_False.append(HIL_ablation_study_results[f'HIL_Expert_traj_{coins_array[i]}'][f'HIL_traj_{coins_array[i]}_nOptions_1_supervised_False_{j}'])
+            
+        HIL_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_nOptions_1_supervised_False),0)
+        HIL_nOptions_1_supervised_False_std = np.std(np.array(HIL_nOptions_1_supervised_False),0)
+        
+        HIL_allocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
+        HIL_allocentric_nOptions_1_supervised_False_std = np.std(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
+        
+        BW_iters = np.linspace(0,10,len(HIL_nOptions_1_supervised_False_mean))
+        threshold = np.mean(Real_Reward_eval_human)
+        Human_average_performance = threshold*np.ones((len(BW_iters),))
+        
+        Expert_value = Reward_eval_human[coins_array[i]]*np.ones((len(BW_iters),))
+        Original = Real_Reward_eval_human[coins_array[i]]*np.ones((len(BW_iters),))
+        
+        axes.plot(BW_iters, HIL_nOptions_1_supervised_False_mean, label='IL allocentric and egocentric Agent', c=clrs[0])
+        axes.fill_between(BW_iters, HIL_nOptions_1_supervised_False_mean-HIL_nOptions_1_supervised_False_std, HIL_nOptions_1_supervised_False_mean+HIL_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[0])
+        axes.plot(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean, label='IL allocentric Agent', c=clrs[2])
+        axes.fill_between(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean-HIL_allocentric_nOptions_1_supervised_False_std, HIL_allocentric_nOptions_1_supervised_False_mean+HIL_allocentric_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[2])
+        axes.plot(BW_iters, Original, "-.", label='Imitated Human', c=clrs[7])
+        axes.plot(BW_iters, Human_average_performance, "--", label='Humans average', c=clrs[9])
+        
+        axes.set_ylim([0, 300])
+        axes.set_xlabel('Epochs')
+        if i == 0:
+            axes.set_ylabel('Reward')
+            
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+            
+        i+=1
+  
+# box = ax_array.get_position()
+# ax_array.set_position([box.x0, box.y0 + box.height * 0.1,
+#                  box.width, box.height * 0.9])
+# Put a legend below current axis
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
+plt.show()
+
+# %% HIL ablation study only Options 1
+Reward_eval_human = np.load("./Expert_data/Reward_eval_human.npy")
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()
+Processing_difference = Real_Reward_eval_human - Reward_eval_human 
+
+coins_array = range(50)
+
+# selected by inspection considering: (i) human performance, (ii) at least a trajectory from each subject, (iii) not too many lost info in the preprocessing step
+
+columns = 5
+rows = 10
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(25,45))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+
+        HIL_nOptions_1_supervised_False = []
+        
+        for j in range(8):
+            HIL_nOptions_1_supervised_False.append(HIL_ablation_study_results[f'HIL_Expert_traj_{coins_array[i]}'][f'HIL_traj_{coins_array[i]}_nOptions_1_supervised_False_{j}'])
+            
+        HIL_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_nOptions_1_supervised_False),0)
+        HIL_nOptions_1_supervised_False_std = np.std(np.array(HIL_nOptions_1_supervised_False),0)
+        
+        HIL_allocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
+        HIL_allocentric_nOptions_1_supervised_False_std = np.std(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
+        
+        BW_iters = np.linspace(0,10,len(HIL_nOptions_1_supervised_False_mean))
+        threshold = np.mean(Real_Reward_eval_human)
+        Human_average_performance = threshold*np.ones((len(BW_iters),))
+        
+        Expert_value = Reward_eval_human[coins_array[i]]*np.ones((len(BW_iters),))
+        Original = Real_Reward_eval_human[coins_array[i]]*np.ones((len(BW_iters),))
+        
+        axes.plot(BW_iters, HIL_nOptions_1_supervised_False_mean, label='IL allocentric and egocentric Agent', c=clrs[0])
+        axes.fill_between(BW_iters, HIL_nOptions_1_supervised_False_mean-HIL_nOptions_1_supervised_False_std, HIL_nOptions_1_supervised_False_mean+HIL_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[0])
+        axes.plot(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean, label='IL allocentric Agent', c=clrs[2])
+        axes.fill_between(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean-HIL_allocentric_nOptions_1_supervised_False_std, HIL_allocentric_nOptions_1_supervised_False_mean+HIL_allocentric_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[2])
+        axes.plot(BW_iters, Original, "-.", label='Imitated Human', c=clrs[7])
+        axes.plot(BW_iters, Human_average_performance, "--", label='Humans average', c=clrs[9])
+        
+        axes.set_ylim([0, 300])
+        # axes.set_xlabel('Epochs')
+        if i == 0:
+            axes.set_ylabel('Reward')
+            
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+            
+        i+=1
+  
+# box = ax_array.get_position()
+# ax_array.set_position([box.x0, box.y0 + box.height * 0.1,
+#                  box.width, box.height * 0.9])
+# Put a legend below current axis
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
+plt.show()
+
+# %%
+HIL_nOptions_1_supervised_False = []
+success=0
+equal=0
+for k in range(len(coins_array)):
+    for j in range(8):
+            HIL_nOptions_1_supervised_False.append(HIL_ablation_study_results[f'HIL_Expert_traj_{k}'][f'HIL_traj_{k}_nOptions_1_supervised_False_{j}'])
+            
+    HIL_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_nOptions_1_supervised_False),0)
+    HIL_allocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_allocentric_AllHumans[k]),0)
+
+    if HIL_nOptions_1_supervised_False_mean[-1] >= HIL_allocentric_nOptions_1_supervised_False_mean[-1]:
+        success+=1
+        
+print(f"Success Percentage {success/len(coins_array)}")
+ 
+# %% HRL PPO study preWork ALLOCENTRIC ONLY
+
+PPO_no_IL = []
+
+for i in range(8):
+    with open(f'results/HRL/evaluation_PPO_HIL_False_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+        PPO_no_IL.append(np.load(f, allow_pickle=True))
+        
+PPO_mean = np.mean(np.array(PPO_no_IL),0)
+PPO_std = np.std(np.array(PPO_no_IL),0)
+
+coins_array = range(50)
+
+PPO_RL_AllHumans = [[[] for i in range(8)] for coin in coins_array]
+
+j=0
+success=0
+for human in coins_array:
+    for i in range(8):
+        with open(f'results/HRL/evaluation_PPO_HIL_True_traj_{human}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+            PPO_RL_AllHumans[j][i] = np.load(f, allow_pickle=True)
+            
+            
+    j+=1
     
+PPO_RL_allocentric_AllHumans = [[[] for i in range(8)] for coin in coins_array]
+
+j=0
+success=0
+for human in coins_array:
+    for i in range(8):
+        with open(f'results/HRL/evaluation_PPO_allocentric_only_HIL_True_traj_{human}_{i}.npy', 'rb') as f:
+            PPO_RL_allocentric_AllHumans[j][i] = np.load(f, allow_pickle=True)
+            
+            
+    j+=1
+
+PPO_RL_mean = []
+PPO_RL_std = []
+PPO_RL_allocentric_mean = []
+PPO_RL_allocentric_std = []
+success=0
+success_allocentric=0
+percentage = 0.7
+for j in range(len(coins_array)):
+    PPO_RL_mean.append(np.mean(np.array(PPO_RL_AllHumans[j]),0))
+    PPO_RL_std.append(np.std(np.array(PPO_RL_AllHumans[j]),0))
+    PPO_RL_allocentric_mean.append(np.mean(np.array(PPO_RL_allocentric_AllHumans[j]),0))
+    PPO_RL_allocentric_std.append(np.std(np.array(PPO_RL_allocentric_AllHumans[j]),0))
+    
+    if PPO_RL_mean[j][-1]/325>percentage:
+        success+=1
+        
+    if PPO_RL_allocentric_mean[j][-1]/325>percentage:
+        success_allocentric+=1
+        
+print(success/50)
+print(success_allocentric/50)
+
+success = 0
+
+for i in range(len(Real_Reward_eval_human)):
+    
+    if Real_Reward_eval_human[i]/325>percentage:
+        success+=1
+        
+print(success/50)
+    
+# %% HRL PPO study only Options 1 and some selected trajectories
+    
+steps = np.linspace(0,10.02e6,len(PPO_RL_mean[0]))
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()    
+threshold = np.mean(Real_Reward_eval_human)
+Human_average_performance = threshold*np.ones((len(steps),))
+
+coins_array = [9, 10, 13, 40, 43]
+
+clrs = sns.color_palette("husl", 10)
+
+columns = 5
+rows = 1
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(20,5))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+        
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL', c=clrs[1])
+        axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
+        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric only', c=clrs[3])
+        axes.fill_between(steps, PPO_RL_allocentric_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_allocentric_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[3])
+        axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
+        axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
+        
+        Original = Real_Reward_eval_human[coins_array[i]]*np.ones((len(steps),))
+
+        axes.plot(steps, Original, "-.", label='Imitated Human', c=clrs[7])
+        axes.plot(steps, Human_average_performance, "--", label='Humans average', c=clrs[9])
+        
+        axes.set_ylim([0, 300])
+        axes.set_xlabel('Steps')
+        if i == 0:
+            axes.set_ylabel('Reward')
+            
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+        
+        i+=1
+
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/Comparison_PPO_some_experts_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/Comparison_PPO_some_experts_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
+
+# %% HRL PPO study only Options 1 and all the trajectories
+
+Reward_eval_human = np.load("./Expert_data/Reward_eval_human.npy")
+Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()
+Processing_difference = Real_Reward_eval_human - Reward_eval_human 
+
+coins_array = range(50)
+
+# selected by inspection considering: (i) human performance, (ii) at least a trajectory from each subject, (iii) not too many lost info in the preprocessing step
+
+columns = 5
+rows = 10
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(25,45))
+i=0
+for k,ax_row in enumerate(ax_array):
+    for j,axes in enumerate(ax_row):
+
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL', c=clrs[1])
+        axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
+        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric only', c=clrs[3])
+        axes.fill_between(steps, PPO_RL_allocentric_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_allocentric_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[3])
+        axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
+        axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
+        
+        Original = Real_Reward_eval_human[coins_array[i]]*np.ones((len(steps),))
+
+        axes.plot(steps, Original, "-.", label='Imitated Human', c=clrs[7])
+        axes.plot(steps, Human_average_performance, "--", label='Humans average', c=clrs[9])
+        
+        axes.set_ylim([0, 300])
+        
+        axes.title.set_text(f'Traj {coins_array[i]+1}')
+        
+        i+=1
+
+handles, labels = axes.get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+plt.savefig('Figures/Comparison_PPO_all_experts_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/Comparison_PPO_all_experts_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
+plt.show()
