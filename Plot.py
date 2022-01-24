@@ -32,10 +32,10 @@ Coins_location = np.load("./Expert_data/Coins_location.npy")
 
 coins_location = Coins_location[0]
 
-wall_1 = [[-11,-10+i*0.1] for i in range(201)]
-wall_2 = [[-10+i*0.1,11] for i in range(201)]
-wall_3 = [[11,10-i*0.1] for i in range(201)]
-wall_4 = [[-10+i*0.1,-11] for i in range(201)]
+wall_1 = [[-10,-8+i*0.1] for i in range(170)]
+wall_2 = [[-9+i*0.1, 10] for i in range(170)]
+wall_3 = [[9, 9-i*0.1] for i in range(170)]
+wall_4 = [[-9+i*0.1,-9] for i in range(170)]
 
 
 sigma1 = 0.5
@@ -94,10 +94,10 @@ plt.show()
 
 coins_array = range(50)
 
-wall_1 = [[-11,-10+i*0.1] for i in range(201)]
-wall_2 = [[-10+i*0.1,11] for i in range(201)]
-wall_3 = [[11,10-i*0.1] for i in range(201)]
-wall_4 = [[-10+i*0.1,-11] for i in range(201)]
+wall_1 = [[-10,-8+i*0.1] for i in range(170)]
+wall_2 = [[-9+i*0.1, 10] for i in range(170)]
+wall_3 = [[9, 9-i*0.1] for i in range(170)]
+wall_4 = [[-9+i*0.1,-9] for i in range(170)]
 
 # selected by inspection considering: (i) human performance, (ii) at least a trajectory from each subject, (iii) not too many lost info in the preprocessing step
 
@@ -177,7 +177,7 @@ coins_array = [13, 40]
 
 columns = 2
 rows = 1
-fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(10,5))
+fig, ax_array = plt.subplots(rows, columns, squeeze=False, figsize=(10,4))
 x=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
@@ -300,7 +300,7 @@ for k,ax_row in enumerate(ax_array):
 #                  box.width, box.height * 0.9])
 # Put a legend below current axis
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8, prop={'size': 26})
 plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat.jpg', format='jpg', bbox_inches='tight')
 plt.show()
@@ -339,7 +339,7 @@ for k,ax_row in enumerate(ax_array):
         Expert_value = Reward_eval_human[coins_array[i]]*np.ones((len(BW_iters),))
         Original = Real_Reward_eval_human[coins_array[i]]*np.ones((len(BW_iters),))
         
-        axes.plot(BW_iters, HIL_nOptions_1_supervised_False_mean, label='nOptions 1', c=clrs[0])
+        axes.plot(BW_iters, HIL_nOptions_1_supervised_False_mean, label='Imitation Learning Agent', c=clrs[0])
         axes.fill_between(BW_iters, HIL_nOptions_1_supervised_False_mean-HIL_nOptions_1_supervised_False_std, HIL_nOptions_1_supervised_False_mean+HIL_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[0])
         axes.plot(BW_iters, Original, "-.", label='Imitated Human', c=clrs[7])
         axes.plot(BW_iters, Human_average_performance, "--", label='Humans average', c=clrs[9])
@@ -354,7 +354,7 @@ for k,ax_row in enumerate(ax_array):
 #                  box.width, box.height * 0.9])
 # Put a legend below current axis
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8, prop={'size': 36})
 plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat.jpg', format='jpg', bbox_inches='tight')
 plt.show()
@@ -478,7 +478,7 @@ for k,ax_row in enumerate(ax_array):
             
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.02), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.02), fancybox=True, shadow=True, ncol=8, prop={'size': 16})
 plt.savefig('Figures/Comparison_RL_methods.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_RL_methods.jpg', format='jpg', bbox_inches='tight')
 
@@ -567,7 +567,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8, prop={'size': 26})
 plt.savefig('Figures/Comparison_PPO_some_experts.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_some_experts.jpg', format='jpg', bbox_inches='tight')
 
@@ -605,7 +605,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8, prop={'size': 36})
 plt.savefig('Figures/Comparison_PPO_all_experts.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_all_experts.jpg', format='jpg', bbox_inches='tight')
 plt.show()
@@ -620,10 +620,10 @@ coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [
 
 coins_location_adv = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4),0)
 
-wall_1 = [[-11,-10+i*0.1] for i in range(201)]
-wall_2 = [[-10+i*0.1,11] for i in range(201)]
-wall_3 = [[11,10-i*0.1] for i in range(201)]
-wall_4 = [[-10+i*0.1,-11] for i in range(201)]
+wall_1 = [[-10,-8.5+i*0.1] for i in range(180)]
+wall_2 = [[-9+i*0.1, 10.5] for i in range(180)]
+wall_3 = [[10, 9.5-i*0.1] for i in range(180)]
+wall_4 = [[-9+i*0.1,-9.5] for i in range(180)]
 
 
 sigma1 = 0.5
@@ -740,7 +740,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8, prop={'size': 26})
 plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_some_experts.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_some_experts.jpg', format='jpg', bbox_inches='tight')
 
@@ -775,7 +775,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8, prop={'size': 40})
 plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_all_experts.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_IL_ONLY_ADV_Reward_all_experts.jpg', format='jpg', bbox_inches='tight')
 plt.show()
@@ -842,7 +842,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8, prop={'size': 26})
 plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_some_experts.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_some_experts.jpg', format='jpg', bbox_inches='tight')
 
@@ -877,7 +877,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8, prop={'size': 40})
 plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_all_experts.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_RL_IL_ADV_Reward_all_experts.jpg', format='jpg', bbox_inches='tight')
 plt.show()
@@ -964,7 +964,7 @@ for k,ax_row in enumerate(ax_array):
 #                  box.width, box.height * 0.9])
 # Put a legend below current axis
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=2, prop={'size': 24})
 plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
 plt.show()
@@ -1024,7 +1024,7 @@ for k,ax_row in enumerate(ax_array):
 #                  box.width, box.height * 0.9])
 # Put a legend below current axis
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=2, prop={'size': 36})
 plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
 plt.show()
@@ -1131,9 +1131,9 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
         
-        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL', c=clrs[1])
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL allocentric and egocentric Agent', c=clrs[1])
         axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
-        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric only', c=clrs[3])
+        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric Agent', c=clrs[3])
         axes.fill_between(steps, PPO_RL_allocentric_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_allocentric_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[3])
         axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
         axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
@@ -1153,7 +1153,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=3, prop={'size': 22})
 plt.savefig('Figures/Comparison_PPO_some_experts_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_some_experts_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
 
@@ -1174,9 +1174,9 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
 
-        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL', c=clrs[1])
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL allocentric and egocentric Agent', c=clrs[1])
         axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
-        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric only', c=clrs[3])
+        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric Agent', c=clrs[3])
         axes.fill_between(steps, PPO_RL_allocentric_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_allocentric_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[3])
         axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
         axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
@@ -1193,7 +1193,7 @@ for k,ax_row in enumerate(ax_array):
         i+=1
 
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=8)
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=3, prop={'size': 30})
 plt.savefig('Figures/Comparison_PPO_all_experts_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
 plt.savefig('Figures/Comparison_PPO_all_experts_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
 plt.show()
