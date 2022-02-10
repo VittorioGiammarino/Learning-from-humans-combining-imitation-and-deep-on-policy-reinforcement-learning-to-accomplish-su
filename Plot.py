@@ -547,7 +547,7 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
         
-        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL', c=clrs[1])
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'IL + PPO', c=clrs[1])
         axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
         axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
         axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
@@ -588,7 +588,7 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
 
-        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL', c=clrs[1])
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'IL + PPO', c=clrs[1])
         axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
         axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
         axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
@@ -723,7 +723,7 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
         
-        axes.plot(steps, PPO_IL_only_Adversarial_mean[coins_array[i]], label=f'PPO + IL-only', c=clrs[1])
+        axes.plot(steps, PPO_IL_only_Adversarial_mean[coins_array[i]], label=f'IL-only + PPO', c=clrs[1])
         axes.fill_between(steps, PPO_IL_only_Adversarial_mean[coins_array[i]]-PPO_IL_only_Adversarial_std[coins_array[i]], PPO_IL_only_Adversarial_mean[coins_array[i]]+PPO_IL_only_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
         
         Original = np.ones((len(steps),))
@@ -761,7 +761,7 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
 
-        axes.plot(steps, PPO_IL_only_Adversarial_mean[coins_array[i]], label='PPO + IL-only', c=clrs[1])
+        axes.plot(steps, PPO_IL_only_Adversarial_mean[coins_array[i]], label='IL-only + PPO', c=clrs[1])
         axes.fill_between(steps, PPO_IL_only_Adversarial_mean[coins_array[i]]-PPO_IL_only_Adversarial_std[coins_array[i]], PPO_IL_only_Adversarial_mean[coins_array[i]]+PPO_IL_only_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
         
         Original = np.ones((len(steps),))
@@ -825,7 +825,7 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
         
-        axes.plot(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]], label='PPO + RL-IL', c=clrs[1])
+        axes.plot(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]], label='IL-RL + PPO', c=clrs[1])
         axes.fill_between(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]]-PPO_IL_RL_Adversarial_std[coins_array[i]], PPO_IL_RL_Adversarial_mean[coins_array[i]]+PPO_IL_RL_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
         
         Original = np.ones((len(steps),))
@@ -863,7 +863,7 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
 
-        axes.plot(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]], label='PPO + RL-IL', c=clrs[1])
+        axes.plot(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]], label='IL-RL + PPO', c=clrs[1])
         axes.fill_between(steps, PPO_IL_RL_Adversarial_mean[coins_array[i]]-PPO_IL_RL_Adversarial_std[coins_array[i]], PPO_IL_RL_Adversarial_mean[coins_array[i]]+PPO_IL_RL_Adversarial_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
         
         Original = np.ones((len(steps),))
@@ -1131,9 +1131,9 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
         
-        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL allocentric and egocentric Agent', c=clrs[1])
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'IL + PPO allocentric and egocentric Agent', c=clrs[1])
         axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
-        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric Agent', c=clrs[3])
+        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'IL + PPO allocentric Agent', c=clrs[3])
         axes.fill_between(steps, PPO_RL_allocentric_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_allocentric_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[3])
         axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
         axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
@@ -1174,9 +1174,9 @@ i=0
 for k,ax_row in enumerate(ax_array):
     for j,axes in enumerate(ax_row):
 
-        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'PPO + IL allocentric and egocentric Agent', c=clrs[1])
+        axes.plot(steps, PPO_RL_mean[coins_array[i]], label=f'IL + PPO allocentric and egocentric Agent', c=clrs[1])
         axes.fill_between(steps, PPO_RL_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[1])
-        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'PPO + IL allocentric Agent', c=clrs[3])
+        axes.plot(steps, PPO_RL_allocentric_mean[coins_array[i]], label=f'IL + PPO allocentric Agent', c=clrs[3])
         axes.fill_between(steps, PPO_RL_allocentric_mean[coins_array[i]]-PPO_RL_std[coins_array[i]], PPO_RL_allocentric_mean[coins_array[i]]+PPO_RL_std[coins_array[i]], alpha=0.1, facecolor=clrs[3])
         axes.plot(steps, PPO_mean, label='PPO', c=clrs[8])
         axes.fill_between(steps, PPO_mean-PPO_std, PPO_mean+PPO_std, alpha=0.2, facecolor=clrs[8])
