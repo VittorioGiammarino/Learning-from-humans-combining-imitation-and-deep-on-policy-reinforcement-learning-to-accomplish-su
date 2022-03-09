@@ -5,7 +5,6 @@ Created on Tue Nov 24 17:13:05 2020
 
 @author: vittorio
 """
-
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 import csv

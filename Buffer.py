@@ -21,7 +21,7 @@ class ReplayBuffer(object):
         self.cost = np.zeros((max_size, 1))
         self.not_done = np.zeros((max_size, 1))
 
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cpu")
         
     def add(self, state, action, next_state, reward, cost, done):
         self.state[self.ptr] = state

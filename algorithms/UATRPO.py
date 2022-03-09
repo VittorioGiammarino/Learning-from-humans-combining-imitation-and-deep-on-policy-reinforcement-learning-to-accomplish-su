@@ -14,7 +14,7 @@ import torch.nn.functional as F
 from models import SoftmaxHierarchicalActor
 from models import Value_net
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 class UATRPO:
     def __init__(self, state_dim, action_dim, encoding_info = None, num_steps_per_rollout=15000, gae_gamma = 0.99, gae_lambda = 0.99, 

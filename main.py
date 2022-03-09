@@ -19,14 +19,9 @@ from BatchBW_HIL_torch import BatchBW
 from evaluation import evaluate_H
 from evaluation import eval_policy
 
-import PPO
-import TRPO
-import UATRPO
+from algorithms import PPO, TRPO, UATRPO, TD3, SAC
 
-import TD3
-import SAC
-
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 #%%
 
@@ -436,7 +431,6 @@ if __name__ == "__main__":
     Best_results_nOptions_1_IL_RL = load_obj('IL_RL_best_nOptions_1')
     
     Best_results_allocentric_only_nOptions_1_IL_only = load_obj('HIL_ablation_study/Best_results_allocentric_only_nOptions_1')
-    # Best_results_allocentric_only_nOptions_1_IL_RL = load_obj('IL_RL_best_allocentric_only_nOptions_1')
     
     parser = argparse.ArgumentParser()
     #General
@@ -768,9 +762,6 @@ if __name__ == "__main__":
             coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
             coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
             coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
-            
-            # args.load_HIL_model_seed = Best_results_allocentric_only_nOptions_1_IL_RL[f'IL_RL_allocentric_only_traj_{args.load_HIL_model_expert_traj}']['best_seed']
-            # args.load_HIL_model_expert_traj = Best_results_allocentric_only_nOptions_1_IL_RL[f'IL_RL_allocentric_only_traj_{args.load_HIL_model_expert_traj}']['traj']
 
             env = World.Foraging.env_allocentric_only(coins_location)
             

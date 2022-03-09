@@ -8,7 +8,7 @@ from Buffer import ReplayBuffer
 from models import SoftmaxHierarchicalActor
 from models import Critic_flat_discrete
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
     
 class SAC(object):
