@@ -1,6 +1,4 @@
-# READ ME
-
-## Code used for the paper Learning from humans: combining imitation and deep reinforcement learning to accomplish human-level performance on a virtual foraging task 
+## Code used for the paper *Learning from humans: combining imitation and deep reinforcement learning to accomplish human-level performance on a virtual foraging task* 
 
 ### Please cite the paper if you used this code or any of its components
 
