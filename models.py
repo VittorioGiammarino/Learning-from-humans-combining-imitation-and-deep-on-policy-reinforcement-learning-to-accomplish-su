@@ -5,12 +5,10 @@ Created on Mon Aug  9 17:55:49 2021
 
 @author: vittorio
 """
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.distributions.categorical import Categorical
-
 
 class SoftmaxHierarchicalActor:
     class NN_PI_LO(nn.Module):
