@@ -39,8 +39,13 @@ def HIL(env, args, seed):
             for j in range(len(Trajectories[i])):
                 Trajectories[i][j,2] = 0
                 Trajectories[i][j,3] = 0
+                
+    if args.mode == "HIL_ablation_study_egocentric_only":
+        for i in range(len(Trajectories)):
+            for j in range(1, len(Trajectories[i])):
+                Trajectories[i][j,0] = 0
+                Trajectories[i][j,1] = 0
         
-    
     TrainingSet = Trajectories[args.coins]
     Labels = Rotation[args.coins]
    
@@ -123,6 +128,15 @@ def HIL(env, args, seed):
             os.makedirs(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}")
         
         Agent_BatchHIL_torch.save(f"./models/HIL_ablation_study_allocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL")
+        
+    elif args.mode == "HIL_ablation_study_egocentric_only":
+        
+        np.save(f"./results/HRL/HIL_egocentric_only_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}", evaluation_HIL)
+        
+        if not os.path.exists(f"./models/HIL_ablation_study_egocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}"):
+            os.makedirs(f"./models/HIL_ablation_study_egocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}")
+        
+        Agent_BatchHIL_torch.save(f"./models/HIL_ablation_study_egocentric_only/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL")
     
 
 def HRL(env, args, seed):
@@ -135,6 +149,12 @@ def HRL(env, args, seed):
             for j in range(len(Trajectories[i])):
                 Trajectories[i][j,2] = 0
                 Trajectories[i][j,3] = 0    
+                
+    if args.mode == "HRL_ablation_study_egocentric_only":
+        for i in range(len(Trajectories)):
+            for j in range(1, len(Trajectories[i])):
+                Trajectories[i][j,0] = 0
+                Trajectories[i][j,1] = 0
     
     TrainingSet = Trajectories[args.coins]
     Labels = Rotation[args.coins]
@@ -266,6 +286,7 @@ def HRL(env, args, seed):
             Agent_RL.load_actor(f"./models/HIL_ablation_study/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/HIL")  
         elif args.load_model and args.adv_reward:
         	Agent_RL.load_actor(f"./models/HRL/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}/{args.policy}_HIL_True_traj_{args.load_HIL_model_expert_traj}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{args.load_HIL_model_seed}")           
+
         elif args.load_model and args.HIL:
         	Agent_RL.load_actor(f"./models/HRL/HIL/HIL_traj_{args.coins}_nOptions_{args.number_options}_supervised_{args.pi_hi_supervised}_{seed}/HIL") 
                   	
@@ -434,7 +455,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     #General
-    parser.add_argument("--mode", default="HRL_ablation_study_allocentric_only")     # number of options
+    parser.add_argument("--mode", default="HIL_HRL", help="HIL_HRL ")     # number of options
     parser.add_argument("--number_options", default=1, type=int)     # number of options
     parser.add_argument("--policy", default="PPO")                   # Policy name (TD3, DDPG or OurDDPG)
     parser.add_argument("--seed", default=10, type=int)               # Sets Gym, PyTorch and Numpy seeds
@@ -444,10 +465,10 @@ if __name__ == "__main__":
     parser.add_argument("--max_iter", default=334, type=int)    # Max time steps to run environment
     parser.add_argument("--coins", default=2, type=int)
     #IL
-    parser.add_argument("--HIL", action="store_true")          # Batch size for HIL
-    parser.add_argument("--load_HIL_model", action="store_true")         # Batch size for HIL
-    parser.add_argument("--load_HIL_model_seed", default=0, type=int)         # Batch size for HIL
-    parser.add_argument("--load_HIL_model_expert_traj", default=0, type=int)         # Batch size for HIL
+    parser.add_argument("--HIL", action="store_true")          # enable HIL
+    parser.add_argument("--load_HIL_model", action="store_true")         # load model from IL
+    parser.add_argument("--load_HIL_model_seed", default=0, type=int)         # Load model trained under a specific seed
+    parser.add_argument("--load_HIL_model_expert_traj", default=0, type=int)         # Load model trained using specific human trajs
     parser.add_argument("--size_data_set", default=3000, type=int)         # Batch size for HIL
     parser.add_argument("--batch_size_HIL", default=32, type=int)         # Batch size for HIL
     parser.add_argument("--maximization_epochs_HIL", default=10, type=int) # Optimization epochs HIL
@@ -778,6 +799,118 @@ if __name__ == "__main__":
             coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
             
             env = World.Foraging.env_allocentric_only(coins_location)
+    
+        evaluations, policy = train(env, args, args.seed)
+        
+        if args.save_model: 
+            np.save(f"./results/HRL/evaluation_{file_name}", evaluations)
+            policy.save_actor(f"./models/HRL/{file_name}/{file_name}")
+            policy.save_critic(f"./models/HRL/{file_name}/{file_name}")
+            
+    elif args.mode == "HIL_ablation_study_egocentric_only":
+        
+        print("---------------------------------------")
+        print("HIL ablation study egocentric only")
+        print("---------------------------------------")
+        
+        args.HIL = True
+        
+        for i in range(len(Trajectories)):
+            for j in range(1, len(Trajectories[i])):
+                Trajectories[i][j,0] = 0
+                Trajectories[i][j,1] = 0
+        
+        if not os.path.exists("./results/HRL"):
+            os.makedirs("./results/HRL")
+                   
+        if not os.path.exists("./models/HIL_ablation_study_egocentric_only"):
+            os.makedirs("./models//HIL_ablation_study_egocentric_only")
+        
+        for traj in range(len(Trajectories)):
+        
+            args.number_options = 1
+            args.pi_hi_supervised = False
+            
+            args.coins = traj
+            coins_distribution = args.coins  
+            coins_location = Coins_location[coins_distribution,:,:] 
+            env = World.Foraging.env_egocentric_only(coins_location)
+            
+            # Set seeds
+            env.Seed(args.seed)
+            torch.manual_seed(args.seed)
+            np.random.seed(args.seed)
+            
+            HIL(env, args, args.seed)
+                    
+    elif args.mode == "HRL_ablation_study_egocentric_only":
+        
+        file_name = f"{args.policy}_egocentric_only_HIL_{args.HIL}_{args.seed}"
+        print("---------------------------------------")
+        print(f"Egocentric ONLY, Policy: {args.policy}, HIL: {args.HIL}, Env: {args.env}, Seed: {args.seed}")
+        print("---------------------------------------")
+               
+        if not os.path.exists("./results/HRL"):
+            os.makedirs("./results/HRL")
+                               
+        if args.policy == "PPO" or args.policy == "SAC" or args.policy == "TRPO" or args.policy == "UATRPO" or args.policy == "TD3":
+            args.number_options = 1
+            args.pi_hi_supervised = False
+            
+            file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_{args.seed}"
+            print("---------------------------------------")
+            print(f"Allocentric ONLY, Policy: {args.policy}, HIL: {args.HIL}, Env: {args.env}, Seed: {args.seed}")
+            print("---------------------------------------")
+            
+        if args.adv_reward:
+            file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_BOTH_HIL_HRL_traj_{args.load_HIL_model_expert_traj}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            print("---------------------------------------")
+            print("ADV_Reward")
+            print("---------------------------------------")
+                 
+        # if args.load_HIL_model:
+        #     args.load_HIL_model_seed = Best_results_egocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
+        #     args.load_HIL_model_expert_traj = Best_results_allocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
+        #     args.coins = args.load_HIL_model_expert_traj
+            
+            if args.adv_reward:
+                file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_ONLY_HIL_model_traj_{args.load_HIL_model_expert_traj}_ADV_Reward_{args.adv_reward}_{args.seed}"
+            else:
+                file_name = f"{args.policy}_allocentric_only_HIL_{args.HIL}_traj_{args.load_HIL_model_expert_traj}_{args.seed}"
+                print("---------------------------------------")
+                print(f"Allocentric ONLY, Policy: {args.policy}, HIL: {args.HIL}, Human Traj: {args.load_HIL_model_expert_traj}, Env: {args.env}, Seed: {args.seed}")
+                print("---------------------------------------")
+            
+        if not os.path.exists(f"./models/HRL/{file_name}"):
+            os.makedirs(f"./models/HRL/{file_name}")
+         
+        coins_distribution = args.coins    
+        coins_location = Coins_location[coins_distribution,:,:] 
+        env = World.Foraging.env_egocentric_only(coins_location)
+        
+        if args.adv_reward:
+            np.random.seed(0)
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+
+            env = World.Foraging.env_egocentric_only(coins_location)
+            
+        if args.adv_reward and args.load_HIL_model:
+            args.load_HIL_model_seed = Best_results_allocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['best_seed']
+            args.load_HIL_model_expert_traj = Best_results_allocentric_only_nOptions_1_IL_only[f'HIL_allocentric_only_traj_{args.load_HIL_model_expert_traj}_nOptions_1_supervised_False']['traj']
+            args.coins = args.load_HIL_model_expert_traj
+            
+            np.random.seed(0)
+            coin_cluster_1 = np.round(np.random.multivariate_normal([-70,+30], [[(5)**2, 0], [0, (5)**2]], size=50),0)
+            coin_cluster_2 = np.round(np.random.multivariate_normal([60,-20], [[(11)**2, 0], [0, (11)**2]], size=75),0)
+            coin_cluster_3 = np.round(np.random.multivariate_normal([-40,-45], [[(15)**2, 0], [0, (15)**2]], size=100),0)
+            coin_cluster_4 = np.round(np.random.multivariate_normal([0,60], [[(13)**2, 0], [0, (13)**2]], size=100),0)
+            coins_location = np.concatenate((coin_cluster_1,coin_cluster_2,coin_cluster_3,coin_cluster_4,np.array([[110,110]])),0)
+            
+            env = World.Foraging.env_egocentric_only(coins_location)
     
         evaluations, policy = train(env, args, args.seed)
         

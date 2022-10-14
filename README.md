@@ -17,6 +17,13 @@ Note that this implementation does not support `cuda`.
 - `World.py` contains the environment
 - `Plot.py` is used to draw the plots of the paper 
 
+## main "modes"
+- HIL_HRL: run IL followed by RL
+- HIL_ablation_study
+- HRL_ablation_study 
+- HIL_ablation_study_allocentric_only
+- HRL_ablation_study_allocentric_only
+
 ## Data Set
 
 The human trajectories (Fig.9 in the Supplementary Material) are stored in the folder `Expert_Data`.
