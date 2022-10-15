@@ -723,6 +723,32 @@ for trj in coins_array:
     
 
 save_obj(HIL_allocentric_only_best_nOptions_1, 'HIL_ablation_study/Best_results_allocentric_only_nOptions_1')
+
+# %% Egocentric only
+
+HIL_egocentric_only_best_nOptions_1 = {}
+
+coins_array = range(50)
+
+for trj in coins_array:
+    HIL_egocentric_only_nOptions_1_supervised_False = []
+    HIL_egocentric_only_best_nOptions_1_traj = {}
+    
+    HIL_egocentric_only_best_nOptions_1[f'HIL_egocentric_only_traj_{trj}_nOptions_1_supervised_False'] = HIL_egocentric_only_best_nOptions_1_traj
+    
+    for i in range(8):        
+        with open(f'results/HRL/HIL_egocentric_only_traj_{trj}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+            HIL_egocentric_only_nOptions_1_supervised_False.append(np.load(f, allow_pickle=True))
+    
+    reward_array = np.array(HIL_egocentric_only_nOptions_1_supervised_False)
+    
+    best_seed = np.argmax(reward_array[:,-1])
+    
+    HIL_egocentric_only_best_nOptions_1[f'HIL_egocentric_only_traj_{trj}_nOptions_1_supervised_False']['best_seed'] = best_seed
+    HIL_egocentric_only_best_nOptions_1[f'HIL_egocentric_only_traj_{trj}_nOptions_1_supervised_False']['traj'] = trj
+    
+
+save_obj(HIL_egocentric_only_best_nOptions_1, 'HIL_ablation_study/Best_results_egocentric_only_nOptions_1')
 # %% Allocentric only
 
 IL_RL_allocentric_only_best_nOptions_1 = {}

@@ -893,7 +893,7 @@ for i in range(len(Real_Reward_eval_human)):
         
 print(success/50)
 
-# %% HIL ablation study only Options 1 and some selected trajectories ALLOCENTRIC ONLY
+# %% HIL ablation study only Options 1 and some selected trajectories ALLOCENTRIC ONLY and EGOCENTRIC ONLY
 Reward_eval_human = np.load("./Expert_data/Reward_eval_human.npy")
 Real_Reward_eval_human = np.load("./Expert_data/Real_Reward_eval_human.npy", allow_pickle=True).tolist()
 Processing_difference = Real_Reward_eval_human - Reward_eval_human 
@@ -905,11 +905,15 @@ coins_array = [9, 10, 13, 40, 43]
 coins_array = range(50)
 
 HIL_allocentric_AllHumans = [[[] for i in range(8)] for coin in coins_array]
+HIL_egocentric_AllHumans = [[[] for i in range(8)] for coin in coins_array]
 
 for human in coins_array:
     for i in range(8):
         with open(f'results/HRL/HIL_allocentric_only_traj_{human}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
             HIL_allocentric_AllHumans[human][i] = np.load(f, allow_pickle=True)
+            
+        with open(f'results/HRL/HIL_egocentric_only_traj_{human}_nOptions_1_supervised_False_{i}.npy', 'rb') as f:
+            HIL_egocentric_AllHumans[human][i] = np.load(f, allow_pickle=True)
             
 clrs = sns.color_palette("husl", 10)
 
@@ -936,6 +940,9 @@ for k,ax_row in enumerate(ax_array):
         HIL_allocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
         HIL_allocentric_nOptions_1_supervised_False_std = np.std(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
         
+        HIL_egocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_egocentric_AllHumans[coins_array[i]]),0)
+        HIL_egocentric_nOptions_1_supervised_False_std = np.std(np.array(HIL_egocentric_AllHumans[coins_array[i]]),0)
+        
         BW_iters = np.linspace(0,10,len(HIL_nOptions_1_supervised_False_mean))
         threshold = np.mean(Real_Reward_eval_human)
         Human_average_performance = threshold*np.ones((len(BW_iters),))
@@ -947,6 +954,8 @@ for k,ax_row in enumerate(ax_array):
         axes.fill_between(BW_iters, HIL_nOptions_1_supervised_False_mean-HIL_nOptions_1_supervised_False_std, HIL_nOptions_1_supervised_False_mean+HIL_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[0])
         axes.plot(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean, label='IL allocentric Agent', c=clrs[2])
         axes.fill_between(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean-HIL_allocentric_nOptions_1_supervised_False_std, HIL_allocentric_nOptions_1_supervised_False_mean+HIL_allocentric_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[2])
+        axes.plot(BW_iters, HIL_egocentric_nOptions_1_supervised_False_mean, label='IL egocentric Agent', c=clrs[4])
+        axes.fill_between(BW_iters, HIL_egocentric_nOptions_1_supervised_False_mean-HIL_egocentric_nOptions_1_supervised_False_std, HIL_egocentric_nOptions_1_supervised_False_mean+HIL_egocentric_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[4])
         axes.plot(BW_iters, Original, "-.", label='Imitated Human', c=clrs[7])
         axes.plot(BW_iters, Human_average_performance, "--", label='Humans average', c=clrs[9])
         
@@ -964,9 +973,9 @@ for k,ax_row in enumerate(ax_array):
 #                  box.width, box.height * 0.9])
 # Put a legend below current axis
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=2, prop={'size': 24})
-plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
-plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.04), fancybox=True, shadow=True, ncol=3, prop={'size': 24})
+plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC_EGOCENTRIC.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/HIL_over_trajs_selected_comparison_grid_flat_ALLOCENTRIC_EGOCENTRIC.jpg', format='jpg', bbox_inches='tight')
 plt.show()
 
 # %% HIL ablation study only Options 1
@@ -996,6 +1005,9 @@ for k,ax_row in enumerate(ax_array):
         HIL_allocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
         HIL_allocentric_nOptions_1_supervised_False_std = np.std(np.array(HIL_allocentric_AllHumans[coins_array[i]]),0)
         
+        HIL_egocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_egocentric_AllHumans[coins_array[i]]),0)
+        HIL_egocentric_nOptions_1_supervised_False_std = np.std(np.array(HIL_egocentric_AllHumans[coins_array[i]]),0)
+        
         BW_iters = np.linspace(0,10,len(HIL_nOptions_1_supervised_False_mean))
         threshold = np.mean(Real_Reward_eval_human)
         Human_average_performance = threshold*np.ones((len(BW_iters),))
@@ -1007,6 +1019,8 @@ for k,ax_row in enumerate(ax_array):
         axes.fill_between(BW_iters, HIL_nOptions_1_supervised_False_mean-HIL_nOptions_1_supervised_False_std, HIL_nOptions_1_supervised_False_mean+HIL_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[0])
         axes.plot(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean, label='IL allocentric Agent', c=clrs[2])
         axes.fill_between(BW_iters, HIL_allocentric_nOptions_1_supervised_False_mean-HIL_allocentric_nOptions_1_supervised_False_std, HIL_allocentric_nOptions_1_supervised_False_mean+HIL_allocentric_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[2])
+        axes.plot(BW_iters, HIL_egocentric_nOptions_1_supervised_False_mean, label='IL egocentric Agent', c=clrs[4])
+        axes.fill_between(BW_iters, HIL_egocentric_nOptions_1_supervised_False_mean-HIL_egocentric_nOptions_1_supervised_False_std, HIL_egocentric_nOptions_1_supervised_False_mean+HIL_egocentric_nOptions_1_supervised_False_std, alpha=0.2, facecolor=clrs[4])
         axes.plot(BW_iters, Original, "-.", label='Imitated Human', c=clrs[7])
         axes.plot(BW_iters, Human_average_performance, "--", label='Humans average', c=clrs[9])
         
@@ -1024,14 +1038,15 @@ for k,ax_row in enumerate(ax_array):
 #                  box.width, box.height * 0.9])
 # Put a legend below current axis
 handles, labels = axes.get_legend_handles_labels()
-fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=2, prop={'size': 36})
-plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC.pdf', format='pdf', bbox_inches='tight')
-plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC.jpg', format='jpg', bbox_inches='tight')
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.12), fancybox=True, shadow=True, ncol=3, prop={'size': 36})
+plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC_EGOCENTRIC.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('Figures/HIL_over_trajs_comparison_grid_flat_ALLOCENTRIC_EGOCENTRIC.jpg', format='jpg', bbox_inches='tight')
 plt.show()
 
 # %%
 HIL_nOptions_1_supervised_False = []
 success=0
+egocentric_success=0
 equal=0
 for k in range(len(coins_array)):
     for j in range(8):
@@ -1039,11 +1054,16 @@ for k in range(len(coins_array)):
             
     HIL_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_nOptions_1_supervised_False),0)
     HIL_allocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_allocentric_AllHumans[k]),0)
+    HIL_egocentric_nOptions_1_supervised_False_mean = np.mean(np.array(HIL_egocentric_AllHumans[k]),0)
 
     if HIL_nOptions_1_supervised_False_mean[-1] >= HIL_allocentric_nOptions_1_supervised_False_mean[-1]:
         success+=1
         
+    if HIL_nOptions_1_supervised_False_mean[-1] >= HIL_egocentric_nOptions_1_supervised_False_mean[-1]:
+        egocentric_success+=1
+        
 print(f"Success Percentage {success/len(coins_array)}")
+print(f"Success Percentage ego {egocentric_success/len(coins_array)}")
  
 # %% HRL PPO study preWork ALLOCENTRIC ONLY
 
